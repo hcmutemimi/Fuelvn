@@ -218,13 +218,11 @@ export class TrackPage implements OnInit {
       lat:JSON.parse(localStorage.getItem("proLattt")),
       lng:JSON.parse(localStorage.getItem("proLangg"))
     }
-    console.log(this.origin);
     
     this.destination = {
       lat:this.api.proLatTrack,
       lng:this.api.proLangTrack
     }
-    console.log(this.destination);
     
   }
 }

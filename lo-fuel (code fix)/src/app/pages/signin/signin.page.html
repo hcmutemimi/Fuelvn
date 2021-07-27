@@ -1,20 +1,20 @@
 <ion-content class="ion-padding-top ion-padding-horizontal">
     <div class="logo_div">
         <img src="../../../assets/image/logo.png">
-        <h3 class="logo_tittle">Lofuel</h3>
-        <p class="page_tittle">fuel or gas anywhere at any time</p>
-        <p class="main_lbl">Sign In</p>
+        <h3 class="logo_tittle">Fuelvn</h3>
+        <p class="page_tittle">Nhiên liệu và khí gas luôn sẵn sàng ở mọi thời điểm</p>
+        <p class="main_lbl">Đăng nhập</p>
     </div>
     <div class="data_div">
         <form #f="ngForm">
             <ion-item lines="none" class="data_item">
                 <ion-label position="stacked" class="info_label" mode="ios">Email</ion-label>
-                <ion-input required="true" type="text" class="data_input" [(ngModel)]="inputData.email" name="email" placeholder="Enter your email"></ion-input>
+                <ion-input required="true" type="text" class="data_input" [(ngModel)]="inputData.email" name="email" placeholder="Nhập email"></ion-input>
             </ion-item>
             <span class="err" *ngIf="err?.email">{{err?.email}}</span>
             <ion-item lines="none" class="data_item">
-                <ion-label position="stacked" class="info_label" mode="ios">Password</ion-label>
-                <ion-input required="true" [type]="showPassword ? 'text' : 'password'" class="data_input" [(ngModel)]="inputData.password" name="password" placeholder="Enter your password"></ion-input>
+                <ion-label position="stacked" class="info_label" mode="ios">Mật khẩu</ion-label>
+                <ion-input required="true" [type]="showPassword ? 'text' : 'password'" class="data_input" [(ngModel)]="inputData.password" name="password" placeholder="Nhập mật khẩu"></ion-input>
                 <ion-button slot="end" fill="clear" class="transparent_btn password_btn" (click)="showPassword = !showPassword">
                     <ion-icon slot="icon-only" [name]="showPassword ?'eye' : 'eye-off'"></ion-icon>
                 </ion-button>
@@ -25,22 +25,22 @@
             <ion-col class="first_col">
                 <ion-checkbox></ion-checkbox>
                 <ion-label>
-                    <h3 class="remember">Remember Me</h3>
+                    <h3 class="remember">Nhớ mật khẩu</h3>
                 </ion-label>
             </ion-col>
             <ion-col class="ion-text-right">
-                <ion-button class="forgot-btn ion-text-capitalize transparent_btn" (click)="forgotPassword()">forgot password?
+                <ion-button class="forgot-btn ion-text-capitalize transparent_btn" (click)="forgotPassword()">Quên mật khẩu?
                 </ion-button>
             </ion-col>
         </ion-row>
 
         <ion-button class="main_btn" mode="md" expand="full" shape="round" fill="solid" (click)="signIn()">
-            Sign in
+            Đăng nhập
         </ion-button>
 
         <div class="or">
             <h2 class="background">
-                <span>or</span>
+                <span>Hoặc</span>
             </h2>
         </div>
         <div class="social_btn_div">
@@ -56,8 +56,8 @@
             </ion-button> -->
         </div>
         <div class="signup_div">
-            <span class="text">If you are new user?</span>
-            <ion-button (click)="signup()" class="transparent_btn signup_btn">Sign up</ion-button>
+            <span class="text">Bạn chưa có tài khoản?</span>
+            <ion-button (click)="signup()" class="transparent_btn signup_btn">Đăng ký</ion-button>
         </div>
     </div>
 </ion-content>

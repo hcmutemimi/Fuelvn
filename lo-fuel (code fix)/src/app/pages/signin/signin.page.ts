@@ -52,7 +52,6 @@ export class SigninPage implements OnInit {
     );
     this.api.postData("login", fd).subscribe(
       (success: any) => {
-        console.log("success", success);
         this.err = "";
         let hasPre = localStorage.getItem("previous-request") ? true : false;
         if (hasPre) {
@@ -80,16 +79,14 @@ export class SigninPage implements OnInit {
           } else {
             this.util.dismissLoading();
             this.util.modal.dismiss();
-            this.util.presentToast("Something Went Wrong");
+            this.util.presentToast("Đã xảy ra lỗi");
             this.util.presentToast(success.msg);
           }
         }
       },
       (err: any) => {
-        console.log(err);
         this.err = err.error.errors;
-        console.log(this.err);
-        this.util.presentToast("Something Went Wrong");
+        this.util.presentToast("Đã xyar ra lỗi");
         this.util.dismissLoading();
       }
     );
@@ -99,14 +96,12 @@ export class SigninPage implements OnInit {
     // this.fb
     //   .login(["email", "public_profile", "user_friends"])
     //   .then((res: FacebookLoginResponse) => {
-    //     console.log("Logged into Facebook!", res);
     //     this.fb
     //       .api(
     //         "me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)",
     //         []
     //       )
     //       .then((profile) => {
-    //         console.log("profile", profile);
     //         const fd = new FormData();
     //         if (profile.email) {
     //           fd.append("email", profile.email);
@@ -124,7 +119,6 @@ export class SigninPage implements OnInit {
     //         this.util.presentLoading();
     //         this.api.postDataWithToken("socialLogin", fd).subscribe(
     //           (res: any) => {
-    //             console.log("response", res);
     //             if (res.success) {
     //               let page = localStorage.getItem("previous-request-page");
     //               this.util.dismissLoading();
@@ -143,12 +137,10 @@ export class SigninPage implements OnInit {
     //           },
     //           (er) => {
     //             this.util.dismissLoading();
-    //             console.log("er", er);
     //           }
     //         );
     //       });
     //   })
-    //   .catch((e) => console.log("Error logging into Facebook", e));
   }
 
   googleLogin() {
@@ -156,7 +148,6 @@ export class SigninPage implements OnInit {
     //   .login({})
     //   .then((gres) => {
     //     // accessToken
-    //     console.log("google response", gres);
     //     const fd = new FormData();
     //     fd.append("email", gres.email);
     //     fd.append("provider", "GOOGLE");
@@ -171,7 +162,6 @@ export class SigninPage implements OnInit {
     //     this.util.presentLoading();
     //     this.api.postData("socialLogin", fd).subscribe(
     //       (res: any) => {
-    //         console.log("response", res);
     //         this.util.dismissLoading();
     //         if (res.success) {
     //           let page = localStorage.getItem("previous-request-page");
@@ -186,18 +176,15 @@ export class SigninPage implements OnInit {
     //           this.nav.navigateRoot(page);
     //           this.nav.navigateForward("/home");
     //         } else {
-    //           console.log(res.msg);
     //         }
     //       },
     //       (er) => {
     //         this.util.dismissLoading();
-    //         console.log("er", er);
     //       }
     //     );
     //   })
     //   .catch((err) => {
     //     console.error("errror", err);
-    //     console.log("google", err);
     //   });
   }
 }

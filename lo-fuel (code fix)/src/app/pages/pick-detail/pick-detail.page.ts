@@ -234,7 +234,6 @@ export class PickDetailPage implements OnInit {
   ionViewWillEnter() {
     this.qty = this.quantityArray[5];
     this.api.qty = this.qty.p;
-    // console.log("api", this.api.qty);
     this.addr = localStorage.getItem("addressOfLast");
     this.page = this.api.select_fuel;
     setTimeout(() => {
@@ -271,7 +270,7 @@ export class PickDetailPage implements OnInit {
 
   selectQty(item) {
     if (this.pricing.length == 0) {
-      this.util.presentToast("There is no any price found");
+      this.util.presentToast("Không tìm thấy giá");
     } else {
       this.qty = item;
       this.api.qty = this.qty.p;
@@ -313,14 +312,12 @@ export class PickDetailPage implements OnInit {
     },
   ];
   match(item) {
-    console.log("item math",item);
     
     this.select = item.name;
     this.matchId = item.id;
     localStorage.setItem("matchId", item.id);
     this.api.getData("provider/" + this.selectPro + "/" + item.id).subscribe(
       (success: any) => {
-        // console.log(success);
         if (success.success) {
           if (success.data.price == null) {
             this.pricing = [];
@@ -349,10 +346,6 @@ export class PickDetailPage implements OnInit {
   }
 
   providerCost(e) {
-    console.log("select provider", e);
-    console.log("this.matchId",this.matchId);
-    console.log("this.api.pro_id",this.api.pro_id);
-    console.log("this.selectPro",this.selectPro);
     
     this.api.pro_id = e.detail.value;
     this.selectPro = e.detail.value;
@@ -360,13 +353,11 @@ export class PickDetailPage implements OnInit {
     
     this.provider.forEach((element) => {
       element.fuel_type.forEach((e) => {
-       console.log("this.api.pro_id == this.selectPro",this.api.pro_id == this.selectPro) 
         if (this.api.pro_id == this.selectPro) {
           this.api
             .getData("provider/" + this.selectPro + "/" + this.matchId)
             .subscribe(
               (success: any) => {
-                console.log("select pro data",success);
                 if (success.success) {
                   if (success.data.price == null) {
                     this.pricing = [];
@@ -379,8 +370,6 @@ export class PickDetailPage implements OnInit {
                     this.api.price = this.price;
                     this.totalAmount = JSON.parse(this.qty.p) * this.price;
                     this.api.total = this.totalAmount;
-                    // this.api.proLat = success.data.lat;
-                    // this.api.proLong = success.data.lang;
                     localStorage.setItem("proLattt", JSON.stringify(success.data.lat));
                     localStorage.setItem("proLangg", JSON.stringify(success.data.lat));
                   }
@@ -497,7 +486,7 @@ export class PickDetailPage implements OnInit {
       geometry: new ol.geom.Point(
         ol.proj.fromLonLat([this.longitude, this.latitude])
       ),
-      name: "Somewhere else",
+      name: "Nơi khác",
     });
     const translate1 = new ol.interaction.Translate({
       features: new ol.Collection([this.iconFeature2]),

@@ -20,7 +20,6 @@ export class PopoverPage implements OnInit {
 }
 
 // this.vehicle_id = this.selected_vehicle.id;
-// console.log("this.selected_vehicle", this.selected_vehicle);
     
 
 // this.api.postDataWithToken("vehicle/" + {this.vehicle_id} "/update").subscribe(
@@ -31,6 +30,5 @@ export class PopoverPage implements OnInit {
 //     }
 //   },
 //   (err) => {
-//     console.log(err);
 //   }
 // );

@@ -1,32 +1,32 @@
 <ion-content class="ion-padding-top ion-padding-horizontal">
     <div class="logo_div">
         <img src="../../../assets/image/logo.png">
-        <h3 class="logo_tittle">Lofuel</h3>
-        <p class="page_tittle">fuel or gas anywhere at any time</p>
-        <p class="main_lbl">Sign Up</p>
+        <h3 class="logo_tittle">Fuelvn</h3>
+        <p class="page_tittle">Nhiên liệu và khí gas luôn sẵn sàng ở mọi thời điểm</p>
+        <p class="main_lbl">Đăng ký</p>
     </div>
     <div class="data_div">
         <ion-item lines="none" class="data_item">
-            <ion-label position="stacked" class="info_label" mode="ios">Name</ion-label>
-            <ion-input required type="text" class="data_input" [(ngModel)]="name" placeholder="Enter name"></ion-input>
+            <ion-label position="stacked" class="info_label" mode="ios">Tên</ion-label>
+            <ion-input required type="text" class="data_input" [(ngModel)]="name" placeholder="Tên của bạn"></ion-input>
         </ion-item>
         <span class="err" *ngIf="err">{{err?.name}}</span>
         <ion-item lines="none" class="data_item">
             <ion-label position="stacked" class="info_label" mode="ios">Email</ion-label>
-            <ion-input required type="text" class="data_input" [(ngModel)]="email" placeholder="Enter email"></ion-input>
+            <ion-input required type="text" class="data_input" [(ngModel)]="email" placeholder="Email của bạn"></ion-input>
         </ion-item>
         <span class="err" *ngIf="err">{{err?.email}}</span>
         <ion-item lines="none" class="data_item">
-            <ion-label position="stacked" class="info_label" mode="ios">Password</ion-label>
-            <ion-input required [type]="showPassword ? 'text' : 'password'" class="data_input" [(ngModel)]="password" placeholder="Enter password"></ion-input>
+            <ion-label position="stacked" class="info_label" mode="ios">Mật khẩu</ion-label>
+            <ion-input required [type]="showPassword ? 'text' : 'password'" class="data_input" [(ngModel)]="password" placeholder="Nhập mật khẩu"></ion-input>
             <ion-button slot="end" fill="clear" class="transparent_btn password_btn" (click)="showPassword = !showPassword">
                 <ion-icon slot="icon-only" [name]="showPassword ?'eye' : 'eye-off'"></ion-icon>
             </ion-button>
         </ion-item>
         <span class="err" *ngIf="err">{{err?.password}}</span>
         <ion-item lines="none" class="data_item">
-            <ion-label position="stacked" class="info_label" mode="ios">Phone No.</ion-label>
-            <ion-input required type="tel" class="data_input" [(ngModel)]="confirmPass" placeholder="Enter phone number" maxlength="10"></ion-input>
+            <ion-label position="stacked" class="info_label" mode="ios">Số điện thoại.</ion-label>
+            <ion-input required type="tel" class="data_input" [(ngModel)]="confirmPass" placeholder="Nhập số điện thoại" maxlength="10"></ion-input>
             <!-- <ion-button slot="end" class="transparent_btn password_btn">
                 <ion-icon src="../../../assets/image_icon/Ic_eye.svg"></ion-icon>
             </ion-button> -->
@@ -34,7 +34,7 @@
         <span class="err" *ngIf="err">{{err?.phone_no}}</span>
 
         <ion-button class="main_btn sign_up" mode="md" expand="full" shape="round" fill="solid" (click)="signIn()">
-            Sign up
+            Đăng ký
         </ion-button>
 
 
@@ -51,8 +51,8 @@
             </ion-button>
         </div>
         <div class="signup_div">
-            <span class="text">Aleready have an account?</span>
-            <ion-button (click)="signIn()" class="transparent_btn signup_btn" (click)="login()">Sign in</ion-button>
+            <span class="text">Bạn đã có tài khoản?</span>
+            <ion-button (click)="signIn()" class="transparent_btn signup_btn" (click)="login()">Đăng nhập</ion-button>
         </div>
     </div>
 </ion-content>
