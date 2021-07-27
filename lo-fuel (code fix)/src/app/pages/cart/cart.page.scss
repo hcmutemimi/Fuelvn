@@ -1,0 +1,210 @@
+ion-content {
+    .cng_gas {
+        padding: 15px 0px;
+        margin: 0px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: dashed;
+        border-bottom-color: var(--silver);
+        border-bottom-width: 1px;
+        .gas_lbl {
+            font-size: 14px;
+            color: var(--blue);
+            font-family: "rubik_md";
+            margin: 0;
+        }
+        .price_div {
+            display: flex;
+            align-items: center;
+            .price_sp {
+                font-size: 14px;
+                color: var(--my_theme);
+                font-family: "rubik_r";
+                margin-right: 10px;
+            }
+            .btn_div {
+                height: 21px;
+                width: 67px;
+                border-radius: 5px;
+                border: solid 1px var(--silver);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .transparent_btn {
+                    height: 20px;
+                    width: 25px;
+                    ion-icon {
+                        color: var(--my_theme);
+                        height: 14px;
+                        width: 14px;
+                    }
+                }
+                .st_lbl {
+                    font-size: 14px;
+                    color: var(--my_theme);
+                    font-family: "rubik_r";
+                }
+            }
+        }
+    }
+    .coupon_item {
+        margin-bottom: 5px;
+        .coupon_lbl {
+            font-size: 15px;
+            color: var(--blue);
+            font-family: "rubik_md";
+        }
+        ion-icon {
+            height: 16px;
+            width: 16px;
+            margin-right: 10px;
+        }
+    }
+    .divider_div {
+        height: 11px;
+        background-color: var(--lht_blue);
+    }
+    .bill_div {
+        padding: 0px 16px;
+        .bill_lbl {
+            font-size: 18px;
+            color: var(--my_theme);
+            font-family: "rubik_r";
+        }
+        .total {
+            font-size: 14px;
+            color: var(--blue);
+            font-family: "rubik_r";
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+        .gallon {
+            margin-bottom: 5px;
+        }
+        .count {
+            font-size: 13px;
+        }
+        .discont_lbl {
+            color: var(--my_theme);
+            border-bottom: dashed;
+            border-bottom-width: 1px;
+            border-bottom-color: var(--silver);
+            padding-bottom: 13px;
+        }
+        .cancellation {
+            border-bottom: dashed;
+            border-bottom-width: 1px;
+            border-bottom-color: var(--silver);
+            padding-bottom: 13px;
+        }
+        .you_have_div {
+            height: 30px;
+            background-color: var(--div_bc);
+            border: dashed 1px var(--my_theme);
+            border-radius: 2px;
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            .have_lbl {
+                font-size: 12px;
+                color: var(--my_theme);
+                font-family: "rubik_md";
+                padding-left: 10px;
+                margin: 0;
+            }
+        }
+        .address_div {
+            padding-top: 5px;
+            .add_div {
+                display: flex;
+                ion-icon {
+                    width: 22px;
+                    height: 18px;
+                    margin-right: 10px;
+                }
+                .us_add {
+                    font-size: 16px;
+                    color: var(--my_theme);
+                    font-family: "rubik_r";
+                    margin: 0;
+                }
+            }
+        }
+        .pickup_div {
+            display: flex;
+            justify-content: space-between;
+            .date_div {
+                width: 45%;
+                border-bottom: dotted;
+                border-bottom-width: 1px;
+                border-bottom-color: var(--lht_gray);
+                .date_lbl {
+                    font-size: 14px;
+                    color: var(--blue);
+                    font-family: "rubik_r";
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                }
+                ion-datetime {
+                    font-size: 13px;
+                    color: var(--gray);
+                    font-family: "rubik_r";
+                    padding-left: 0;
+                }
+            }
+        }
+        .map_div {
+            height: 142px;
+            width: 100%;
+            margin: 20px 0px;
+            border: dashed 1px var(--my_theme);
+        }
+        .add_lbl {
+            font-size: 14px;
+            color: var(--blue);
+            font-family: "rubik_r";
+            .change_btn {
+                --color: var(--green);
+                font-size: 13px;
+                text-transform: capitalize;
+                height: 16px;
+                font-family: "rubik_r";
+            }
+        }
+        .vehicle_item {
+            --padding-start: 0;
+            --inner-padding-end: 0;
+            border-bottom: dashed;
+            border-bottom-width: 1px;
+            border-bottom-color: var(--silver);
+            .data_lbl {
+                font-size: 13px;
+                color: var(--gray);
+                font-family: "rubik_r";
+            }
+        }
+    }
+}
+
+ion-footer {
+    .btn_div {
+        background-color: var(--my_theme);
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 16px;
+    }
+    .pay_lbl {
+        font-size: 18px;
+        color: var(--white);
+        font-family: "rubik_md";
+        margin: 0;
+    }
+    ion-button {
+        text-transform: capitalize;
+        height: 50px;
+        background-color: var(--my_theme);
+    }
+}

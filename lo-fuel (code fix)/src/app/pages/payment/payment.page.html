@@ -1,0 +1,90 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>payment</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top">
+    <div class="type_div">
+        <img src="../../../assets/image/card.png">
+        <img src="../../../assets/image/paypal_op.png">
+        <img src="../../../assets/image/razor_op.png">
+        <img src="../../../assets/image/stripe_op.png">
+    </div>
+
+    <div class="img_div">
+        <h3 class="num_lbl">
+            1234 5678 9101 1121
+        </h3>
+        <p class="name num_lbl ion-text-uppercase">Jacob Palmer</p>
+        <ion-row>
+            <ion-col>
+                <div class="valid_div">
+                    <div class="form_div">
+                        <p class="valid_lbl">valid</p>
+                        <p class="valid_lbl">from</p>
+                    </div>
+                    <h3 class="date_lbl">12/18</h3>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="valid_div">
+                    <div class="form_div">
+                        <p class="valid_lbl">valid</p>
+                        <p class="valid_lbl">thru</p>
+                    </div>
+                    <h3 class="date_lbl">12/26</h3>
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div class="info_div ion-margin-horizontal">
+        <ion-label class="card_label">
+            CARD NUMBER
+        </ion-label>
+        <ion-item lines="none" mode="md">
+            <ion-input value="1234   5678    9101   1121" class="card_num">
+            </ion-input>
+        </ion-item>
+        <ion-row>
+            <ion-col class="ion-no-padding" size="6">
+                <ion-label class="card_label">
+                    EXPRIRATION DATE
+                </ion-label>
+                <ion-item lines="none" mode="md">
+                    <ion-input value="12  /  26" class="card_num">
+                    </ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col class="ion-no-padding" size="5" offset="1">
+                <ion-label class="card_label">
+                    CVV
+                </ion-label>
+                <ion-item lines="none" mode="md">
+                    <ion-input value="****" class="card_num">
+                    </ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-label class="card_label">
+            CARD HOLDER'S NAME
+        </ion-label>
+        <ion-item lines="none" mode="md">
+            <ion-input value="Randy Betancourt" class="card_num">
+            </ion-input>
+        </ion-item>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-button class="main_btn" expand="full">
+        Make a Payment $18
+    </ion-button>
+</ion-footer>

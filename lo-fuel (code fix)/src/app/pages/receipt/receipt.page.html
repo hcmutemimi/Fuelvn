@@ -1,0 +1,123 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>receipt</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal ion-padding-bottom">
+    <div class="sample">
+        <div type="ticket" class="--flex-column">
+            <div class="top --flex-column">
+                <div class="img_div">
+                    <img [src]="data?.provider?.imageUri" alt="" *ngIf="data?.provider?.imageUri" />
+                    <img *ngIf="!data?.provider?.imageUri" src="../../../assets/placeholder.png">
+                </div>
+
+                <p class="scan_p">{{data?.provider?.name}}</p>
+                <p class="add_lbl">{{data?.address}}</p>
+                <p class="add_lbl or_no">Order No. #{{data?.order_id}}</p>
+
+                <ion-row>
+                    <ion-col>
+                        <h3 class="date_lbl">Date</h3>
+                        <p class="date">{{data?.time | date}}</p>
+                    </ion-col>
+                    <!--  <ion-col>
+                        <h3 class="date_lbl">Time</h3>
+                        <p class="date">{{data?.time | date: "HH:mm:ss"}}</p>
+                    </ion-col> -->
+                    <ion-col>
+                        <h3 class="date_lbl">Payment Status</h3>
+                        <div class="pen_div">
+                            <p class="date" *ngIf="data?.payment_status == 0">Pending</p>
+                            <p class="date" *ngIf="data?.payment_status == 1">Completed</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        <h3 class="date_lbl">Vehicle Name</h3>
+                        <p class="date">{{data?.model?.model?.brand?.name}}</p>
+                    </ion-col>
+                    <ion-col>
+                        <h3 class="date_lbl">Vehicle Number</h3>
+                        <p class="date">{{data?.model?.reg_number}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="last_row">
+                    <ion-col>
+                        <h3 class="date_lbl">Payment</h3>
+                        <p class="date">{{data?.currency}} {{data?.price}}.00</p>
+                    </ion-col>
+                    <ion-col>
+                        <h3 class="date_lbl">Payment Method</h3>
+                        <p class="date">{{data?.payment_method}}</p>
+                    </ion-col>
+                </ion-row>
+
+
+            </div>
+            <div class="rip"></div>
+            <div class="bottom --flex-row-j!sb" *ngIf="data?.review == null && data?.status == 3 || data?.status == 2 || data?.status == 4">
+                <h3 class="rate_h">
+                    <ion-icon name="star" [ngClass]="{rated_ic: rate >= 1}" (click)="setRatingValue(1)"></ion-icon>
+                    <ion-icon name="star" [ngClass]="{rated_ic: rate >= 2}" (click)="setRatingValue(2)"></ion-icon>
+                    <ion-icon name="star" [ngClass]="{rated_ic: rate >= 3}" (click)="setRatingValue(3)"></ion-icon>
+                    <ion-icon name="star" [ngClass]="{rated_ic: rate >= 4}" (click)="setRatingValue(4)"></ion-icon>
+                    <ion-icon name="star" [ngClass]="{rated_ic: rate >= 5}" (click)="setRatingValue(5)"></ion-icon>
+                </h3>
+                <div class="text_a">
+                    <ion-textarea placeholder="Type your review" [(ngModel)]="comment" mode="md" rows="3"></ion-textarea>
+                </div>
+                <ion-button class="send_btn" (click)="history()">
+                    Send
+                </ion-button>
+            </div>
+
+            <ion-item class="ion-no-padding" lines="none" *ngIf="data?.review != null">
+                <ion-thumbnail>
+                    <img src="{{data?.review?.user?.imageUri}}" *ngIf="data?.review?.user?.imageUri">
+                    <img *ngIf="!data?.review?.user?.imageUri" src="../../../assets/placeholder.png">
+                </ion-thumbnail>
+                <ion-label class="label_rev">
+                    <p>{{data?.review?.cmt}}</p>
+                    <p>
+                        <ion-icon class="ratedAl" name="star"></ion-icon>{{data?.review?.star}}</p>
+                </ion-label>
+            </ion-item>
+
+        </div>
+    </div>
+
+
+    <ion-button class="main_btn track_Btn" (click)="paymentDone()" *ngIf="data?.status == 3 && data?.status !== 4 && data?.status !== 6 && data?.payment_status == 0">
+        Payment
+    </ion-button>
+
+    <ion-button class="main_btn2 track_Btn" (click)="paymentCancel()" *ngIf="data?.status !== 4 && data?.status !== 3 && data?.status !== 6">
+        Cancel
+    </ion-button>
+    <ion-button class="main_btn track_Btn" *ngIf="data?.payment_status === 1">
+        Completed
+    </ion-button>
+    <ion-button class="main_btn2 track_Btn" *ngIf="data?.status === 4">
+        Canceled
+    </ion-button>
+    <ion-button class="main_btn2 track_Btn" *ngIf="data?.status === 6">
+        Rejected
+    </ion-button>
+
+
+
+    <ion-button class="main_btn track_Btn" *ngIf="data?.status == '0'" (click)="trackOrder()">
+        Track
+    </ion-button>
+</ion-content>

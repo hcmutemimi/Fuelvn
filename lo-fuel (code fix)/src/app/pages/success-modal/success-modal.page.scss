@@ -1,0 +1,23 @@
+ion-content {
+  .main_div {
+    padding-top: 15px;
+    .pay_lbl {
+      font-size: 18px;
+      font-family: "rubik_md";
+      color: var(--my_theme);
+      margin-top: 25px;
+    }
+    .order_lbl {
+      font-size: 16px;
+      color: var(--my_theme);
+      font-family: "rubik_r";
+    }
+    .will_lbl {
+      font-size: 22px;
+      color: var(--blue);
+      font-family: "rubik_md";
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+}

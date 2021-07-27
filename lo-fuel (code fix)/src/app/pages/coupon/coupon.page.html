@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>coupon</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class="stamp" *ngFor="let item of offer">
+        <div class="discount">
+            <p class="discount_lbl">Discount</p>
+        </div>
+        <div class="data_div">
+            <p class="detail">{{item?.detail}}</p>
+            <div class="expire_div">
+                <ion-label>
+                    <h3 class="info_lbl">Expires</h3>
+                    <p class="info_lbl date_p">{{item?.expire}}</p>
+                </ion-label>
+                <ion-button class="applye_btn" (click)="applyCoopan()">
+                    Apply
+                </ion-button>
+            </div>
+        </div>
+    </div>
+</ion-content>

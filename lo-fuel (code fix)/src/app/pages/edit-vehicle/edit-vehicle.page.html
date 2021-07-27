@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Edit vehicle</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-item mode="md" lines="none">
+        <ion-label class="st_lbl" mode="ios" position="stacked">
+            Company
+        </ion-label>
+        <ion-select placeholder="{{selected_vehicle?.model?.brand?.name}}" (ionChange)="changeModel($event)">
+            <ion-select-option *ngFor="let item of data" value="{{ item.id }}">{{ item.name }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item mode="md" lines="none">
+        <ion-label class="st_lbl" mode="ios" position="stacked">
+            Model
+        </ion-label>
+        <ion-select placeholder="{{selected_vehicle?.model?.name}}" [(ngModel)]="model_id" [disabled]="model_id2 == ''">
+            <ion-select-option *ngFor="let items of model" [value]="items.id">{{ items.name }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item mode="md" lines="none">
+        <ion-label class="st_lbl" mode="ios" position="stacked">
+            Model
+        </ion-label>
+        <ion-input placeholder="{{selected_vehicle?.modelYear}}" value="{{selected_vehicle?.modelYear}}" [(ngModel)]="models">
+        </ion-input>
+    </ion-item>
+    <ion-item mode="md" lines="none">
+        <ion-label class="st_lbl" mode="ios" position="stacked">
+            Color
+        </ion-label>
+        <ion-input placeholder="{{selected_vehicle?.color}}" value="{{selected_vehicle?.color}}" [(ngModel)]="color">
+        </ion-input>
+    </ion-item>
+    <ion-item mode="md" lines="none">
+        <ion-label class="st_lbl" mode="ios" position="stacked">
+            No. Plate
+        </ion-label>
+        <ion-input placeholder="{{selected_vehicle?.reg_number}}" value="{{selected_vehicle?.reg_number}}" [(ngModel)]="reg_number">
+        </ion-input>
+    </ion-item>
+    <ion-item mode="md" lines="none">
+        <ion-label class="st_lbl" mode="ios" position="stacked">
+            Note
+        </ion-label>
+        <ion-input placeholder="{{selected_vehicle?.note}}" value="{{selected_vehicle?.note}}" [(ngModel)]="note">
+        </ion-input>
+    </ion-item>
+    <div class="upload_div" (click)="selectImage()">
+        <div class="up_div" [hidden]="image != null">
+            <h3 class="up_lbl">Upload your vehicle image</h3>
+            <p class="touch_lbl">(Touch to upload/click)</p>
+        </div>
+        <img src="{{image}}" [hidden]="image == null" class="user_img">
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-button class="main_btn ion-text-capitalize" [disabled]="model_id == ''|| models == '' || 
+  note == '' || color == '' || reg_number == '' ||
+  model_id == ''" expand="full" (click)="manageVechicle(selected_vehicle.id)">
+        Add
+    </ion-button>
+</ion-footer>

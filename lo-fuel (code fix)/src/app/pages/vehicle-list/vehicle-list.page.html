@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>vehicle list</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top">
+    <div class="head_div">
+        <h3 class="head_lbl">Vehicle List</h3>
+    </div>
+    <ion-item mode="md" *ngFor="let item of data" lines="none" (click)="selectVehicle(item)">
+        <ion-label slot="start" class="st_lbl">
+            {{item?.model?.brand?.name}} {{item?.model?.name}}
+            <ion-icon src="../../../assets/image_icon/tick_ic.svg" *ngIf="isselect == item"></ion-icon>
+        </ion-label>
+        <ion-label slot="end" class="num_lbl">
+            {{item?.reg_number}}
+        </ion-label>
+    </ion-item>
+
+    <div no-data *ngIf="data?.length == 0">
+        <img src="../../../assets/nodata.png" alt="">
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-button class="main_btn ion-text-capitalize" [disabled]="v == ''" expand="full" (click)="cart()">
+        Save
+    </ion-button>
+</ion-footer>

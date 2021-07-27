@@ -1,0 +1,244 @@
+ion-content {
+    --background: url("../../../assets/image/LogIn.png") no-repeat center center / cover;
+    .logo_div {
+        padding-top: 16px;
+        text-align: center;
+        .logo_tittle {
+            font-size: 40px;
+            color: var(--white);
+            font-family: "HornbillPersonalUse_b";
+            margin-bottom: 0;
+        }
+        .page_tittle {
+            font-size: 18px;
+            color: var(--white);
+            font-family: "rubik_r";
+            margin: 0;
+        }
+        .main_lbl {
+            font-size: 30px;
+            font-family: "rubik_md";
+            color: var(--white);
+        }
+    }
+    .err {
+        color: var(--ion-color-primary);
+        font-weight: normal;
+        font-family: 'rubik_r';
+        font-size: 13px;
+    }
+    .data_div {
+        .data_item {
+            --background: transparent;
+            --padding-start: 0px;
+            --inner-padding-end: 0;
+            border-bottom: 1px solid var(--white);
+            .info_label {
+                font-size: 18px;
+                color: var(--white);
+                font-family: "rubik_md";
+                margin-top: 15px;
+            }
+            .data_input {
+                --placeholder-color: var(--white);
+                --placeholder-font-style: "nunito_r";
+                --placeholder-opacity: 1;
+                font-size: 16px;
+                font-family: "rubik_r";
+                color: var(--white);
+            }
+        }
+        ion-row {
+            margin-bottom: 20px;
+            ion-col {
+                padding: 0px;
+                margin-top: 5px;
+                ion-checkbox {
+                    --background: transparent;
+                    margin-right: 10px;
+                    --border-radius: 2px;
+                    height: 15px;
+                    width: 15px;
+                    --border-color: var(--white);
+                }
+            }
+            .first_col {
+                padding-top: 8px;
+                display: flex;
+                align-items: center;
+                .remember {
+                    font-size: 14px;
+                    font-family: "rubik_r";
+                    color: var(--white);
+                }
+            }
+            .forgot-btn {
+                font-size: 14px;
+                font-family: "rubik_r";
+                --color: var(--white);
+                width: auto;
+                margin: 0;
+                margin-top: 5px;
+            }
+        }
+        .password_btn {
+            align-self: flex-end;
+        }
+        .signup_div {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .signup_btn {
+                --color: var(--my_theme);
+                font-size: 14px;
+                font-family: "rubik_md";
+                text-transform: capitalize;
+                margin-left: 4px;
+            }
+            .text {
+                font-size: 14px;
+                font-family: "rubik_r";
+                color: var(--white);
+            }
+        }
+    }
+}
+
+.or {
+    h2 {
+        font-size: 18px;
+        font-family: "ComicSansMS";
+        color: var();
+        margin-top: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h2.background {
+        position: relative;
+        z-index: 1;
+        &:before {
+            border-top: 2px solid #dfdfdf;
+            content: "";
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 95%;
+            z-index: -1;
+        }
+        span {
+            background: var(--white);
+            padding: 0 15px;
+        }
+    }
+    h2.double:before {
+        border-top: none;
+    }
+    h2.double:after {
+        border-bottom: 1px solid blue;
+        -webkit-box-shadow: 0 1px 0 0 red;
+        -moz-box-shadow: 0 1px 0 0 red;
+        box-shadow: 0 1px 0 0 red;
+        content: "";
+        margin: 0 auto;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        width: 95%;
+        z-index: -1;
+    }
+    h2.no-background {
+        position: relative;
+        overflow: hidden;
+        span {
+            display: inline-block;
+            vertical-align: baseline;
+            zoom: 1;
+            *display: inline;
+            *vertical-align: auto;
+            position: relative;
+            padding: 0 20px;
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 1000px;
+                position: absolute;
+                top: 0.73em;
+                border-top: 1px solid red;
+            }
+            &:before {
+                right: 100%;
+            }
+            &:after {
+                left: 100%;
+            }
+        }
+    }
+    h2.no-span {
+        display: table;
+        white-space: nowrap;
+        &:before,
+        &:after {
+            border-top: 1px solid green;
+            content: "";
+            display: table-cell;
+            position: relative;
+            top: 0.5em;
+            width: 45%;
+        }
+        &:before {
+            right: 1.5%;
+        }
+        &:after {
+            left: 1.5%;
+        }
+    }
+}
+
+.social_btn_div {
+    margin-top: 20px;
+    text-align: center;
+    .twitter {
+        --background: var(--twitter);
+        --box-shadow: 0px 0px 6px 0px rgba(11, 170, 252, 1);
+        ion-icon {
+            width: 14px;
+            height: 11px;
+        }
+    }
+    .facbook {
+        margin-left: 30px;
+        margin-right: 30px;
+        --background: var(--facebook);
+        --box-shadow: 0px 0px 6px 0px rgba(70, 90, 149, 1);
+        ion-icon {
+            width: 7px;
+            height: 13px;
+        }
+    }
+    .google {
+        margin-left: 30px;
+        margin-right: 30px;
+        --background: var(--google_plus);
+        --box-shadow: 0px 0px 6px 0px rgba(246, 90, 91, 1);
+        ion-icon {
+            width: 18px;
+            height: 12px;
+        }
+    }
+    .social {
+        height: 40px;
+        --border-radius: 50%;
+        width: 40px;
+        --padding-start: 0px;
+        --padding-end: 0px;
+        --border-width: 2px;
+        --border-style: solid;
+        --border-color: var(--white);
+    }
+}

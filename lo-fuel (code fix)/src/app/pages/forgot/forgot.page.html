@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding-horizontal">
+    <h3 class="main_lbl">Forgot Password</h3>
+    <p class="info_lbl">
+        Please enter your Phone Number. You will receive a code to create a new password via email.
+    </p>
+    <ion-item mode="md" lines="none">
+        <ion-icon slot="start" name="call"></ion-icon>
+        <ion-input placeholder="Phone Number" [(ngModel)]="phone_no"></ion-input>
+    </ion-item>
+    <ion-button class="main_btn ion-text-capitalize send_btn" mode="md" fill="solid" (click)="verify()" expand="round">
+        Reset Password
+    </ion-button>
+</ion-content>

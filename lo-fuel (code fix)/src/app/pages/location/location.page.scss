@@ -1,0 +1,42 @@
+ion-content {
+    .main_lbl {
+        font-size: 22px;
+        color: var(--blue);
+        font-family: "rubik_md";
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 60px;
+    }
+    .detail_lbl {
+        font-size: 18px;
+        font-family: "rubik_r";
+        color: var(--silver);
+        margin-top: 25px;
+        padding: 0px 15px;
+        text-align: center;
+    }
+    ion-item {
+        --inner-padding-end: 0;
+        --padding-start: 0;
+        margin-bottom: 15px;
+        ion-icon {
+            color: var(--blue);
+            height: 17px;
+            width: 17px;
+            margin-right: 20px;
+        }
+        ion-input {
+            font-size: 18px;
+            color: var(--blue);
+            font-family: "rubik_md";
+            border-bottom: dotted;
+            border-bottom-width: 1px;
+            border-bottom-color: var(--silver);
+        }
+    }
+    .err {
+        color: red;
+        font-size: 13px;
+        font-family: "rubik_r";
+    }
+}

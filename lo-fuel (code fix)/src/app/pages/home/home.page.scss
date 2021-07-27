@@ -1,0 +1,42 @@
+ion-content {
+    .fule_type {
+        height: 128px;
+        background-color: var(--white);
+        border-radius: 20px 20px 0px 0px;
+        box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.16);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .fule {
+            text-align: center;
+            opacity: 0.5;
+            .fule_lbl {
+                font-size: 18px;
+                font-family: "rubik_md";
+                color: var(--my_theme);
+                margin-bottom: 0;
+                margin-top: 5px;
+            }
+        }
+        .active {
+            opacity: 1;
+        }
+    }
+    .map {
+        height: 100%;
+        width: 100%;
+    }
+    input {
+        background: transparent;
+        border: none;
+        font-family: 'rubik_r';
+        margin-left: 10px;
+        color: white;
+    }
+    input:focus {
+        outline: none;
+    }
+}

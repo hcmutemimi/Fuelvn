@@ -1,0 +1,167 @@
+ion-menu ion-content {
+  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+}
+
+ion-menu.md ion-content {
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+ion-menu.md ion-list {
+  padding: 20px 0;
+}
+
+ion-menu.md ion-list-header,
+ion-menu.md ion-note {
+  padding-left: 10px;
+}
+
+ion-menu.md ion-list#inbox-list ion-list-header {
+  font-size: 22px;
+  font-weight: 600;
+
+  min-height: 20px;
+}
+
+ion-menu.md ion-list#labels-list ion-list-header {
+  font-size: 16px;
+
+  margin-bottom: 18px;
+
+  color: #757575;
+
+  min-height: 26px;
+}
+
+ion-menu.md ion-item {
+  --padding-start: 10vh;
+  --padding-end: 10px;
+  margin-bottom: 15px;
+}
+
+ion-menu.md ion-item.selected {
+  --background: var(--div_back);
+}
+
+ion-menu.md ion-item.selected ion-icon,
+ion-menu.md ion-item.selected ion-label {
+  color: var(--my_theme);
+}
+
+ion-menu.md ion-item ion-icon {
+  color: var(--blue);
+  margin-right: 20px;
+}
+
+ion-menu.md ion-item ion-label {
+  font-size: 18px;
+  font-family: "rubik_md";
+  color: var(--blue);
+}
+
+ion-menu.ios ion-content {
+  --padding-bottom: 20px;
+}
+
+ion-menu.ios ion-list {
+  padding: 20px 0 0 0;
+}
+
+ion-menu.ios ion-note {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+ion-menu.ios ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 50px;
+}
+
+ion-menu.ios ion-item.selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-menu.ios ion-item ion-icon {
+  font-size: 24px;
+  color: #73849a;
+}
+
+ion-menu.ios ion-list#labels-list ion-list-header {
+  margin-bottom: 8px;
+}
+
+ion-menu.ios ion-list-header,
+ion-menu.ios ion-note {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+ion-menu.ios ion-note {
+  margin-bottom: 8px;
+}
+
+ion-note {
+  display: inline-block;
+  font-size: 16px;
+
+  color: var(--ion-color-medium-shade);
+}
+
+ion-item.selected {
+  --color: var(--ion-color-primary);
+}
+ion-header {
+  ion-toolbar {
+    box-shadow: none;
+    border-radius: 0px;
+  }
+  .header_div {
+    position: relative;
+    padding-top: 20px;
+    .back_div {
+      margin: 0px 15px;
+      height: 50px;
+      background-color: var(--my_theme);
+      border-radius: 35px;
+      padding-top: 6px;
+      position: relative;
+      .name {
+        font-size: 14px;
+        color: var(--white);
+        font-family: "rubik_md";
+        padding-left: 78px;
+        margin: 0;
+      }
+      .email_div {
+        position: absolute;
+        bottom: 0;
+        height: 25px;
+        background-color: var(--blue);
+        width: 90%;
+        left: 0;
+        border-radius: 13px;
+        display: flex;
+        align-items: center;
+        .email {
+          font-size: 12px;
+          font-family: "rubik_r";
+          color: var(--white);
+          padding-left: 78px;
+          margin: 0;
+        }
+      }
+    }
+    .pro_img {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+      border: solid 3px var(--white);
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      z-index: 1;
+    }
+  }
+}

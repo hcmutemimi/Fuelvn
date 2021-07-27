@@ -1,0 +1,22 @@
+ion-content {
+  ion-item {
+    --inner-padding-end: 0;
+    margin-bottom: 15px;
+    .st_lbl {
+      font-size: 18px;
+      color: var(--blue);
+      font-family: "rubik_md";
+      border-bottom: dotted;
+      border-bottom-color: var(--silver);
+      border-bottom-width: 1px;
+      margin-bottom: 0;
+      padding-bottom: 10px;
+    }
+    ion-icon {
+      color: var(--blue);
+      height: 17px;
+      width: 17px;
+      margin-right: 20px;
+    }
+  }
+}

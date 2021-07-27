@@ -1,0 +1,11 @@
+ion-content {
+    ion-button {
+        --color: var(--gray);
+        text-transform: capitalize;
+        font-size: 18px;
+        font-family: "rubik_r";
+        width: 100%;
+        // height: 14px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon src="../../../assets/image_icon/edit.svg">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>account</ion-title>
+    </ion-toolbar>
+    <div class="profile_div">
+        <div class="img_div">
+            <img src="{{imageUri}}" class="user_img">
+            <img src="../../../assets/image/pro_im.png" class="back_img" (click)="selectImage()">
+        </div>
+        <h3 class="name">{{data?.name}}</h3>
+        <p class="email">{{data?.email}}</p>
+    </div>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-item mode="md" lines="none">
+        <ion-icon slot="start" src="../../../assets/image_icon/ac_ic.svg"></ion-icon>
+        <ion-input [(ngModel)]="name" value="{{data?.name}}"></ion-input>
+    </ion-item>
+    <ion-item mode="md" lines="none">
+        <ion-icon slot="start" src="../../../assets/image_icon/email.svg"></ion-icon>
+        <ion-input readonly="true" value="{{data?.email}}"></ion-input>
+    </ion-item>
+    <ion-item mode="md" lines="none">
+        <ion-icon slot="start" src="../../../assets/image_icon/call.svg"></ion-icon>
+        <ion-input readonly="true" value="{{data?.phone_no}}"></ion-input>
+    </ion-item>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-button expand="full" class="main_btn ion-text-capitalize" (click)="updatePro()">
+        Update
+    </ion-button>
+</ion-footer>

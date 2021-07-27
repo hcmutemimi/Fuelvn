@@ -1,0 +1,25 @@
+ion-content {
+  .data_div {
+    padding-bottom: 5px;
+    .info_lbl {
+      font-size: 15px;
+      color: var(--blue);
+      font-family: "rubik_r";
+      margin-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      ion-toggle {
+        padding-top: 5px;
+        --background-checked: var(--toggle);
+        padding-right: 0;
+      }
+    }
+    .deteail {
+      font-size: 13px;
+      color: var(--gray);
+      font-family: "rubik_r";
+      margin: 0;
+    }
+  }
+}

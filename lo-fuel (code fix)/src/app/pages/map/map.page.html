@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>map</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <agm-map [styles]="styles" [latitude]="latitude" [longitude]="longitude" [disableDefaultUI]="true">
+        <agm-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconUrl">
+        </agm-marker>
+    </agm-map>
+    <div class="location_div">
+        <h3 class="loc_lbl">Delivery Location</h3>
+        <div class="input_div">
+            <ion-icon src="../../../assets/image_icon/location.svg"></ion-icon>
+            <input autofocus="true" ngx-google-places-autocomplete value="{{address}}" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-button class="main_btn ion-text-capitalize" expand="full" (click)="cart()">
+        Save
+    </ion-button>
+</ion-footer>

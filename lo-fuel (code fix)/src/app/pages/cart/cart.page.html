@@ -1,0 +1,94 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>cart</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-vertical">
+    <div class="cng_gas">
+        <h3 class="gas_lbl">{{page}}</h3>
+        <div class="price_div">
+            <span class="price_sp">${{prices}}</span>
+            <div class="btn_div">
+                <ion-button class="transparent_btn" (click)="remove()">
+                    <ion-icon name="remove"></ion-icon>
+                </ion-button>
+                <ion-label class="st_lbl">{{qty}}</ion-label>
+                <ion-button class="transparent_btn" (click)="add()">
+                    <ion-icon name="add"></ion-icon>
+                </ion-button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="divider_div">
+    </div>
+    <div class="bill_div">
+        <h3 class="bill_lbl">Bill Details</h3>
+        <p class="total">Total Distance <span class="ion-float-right">{{distance}}Km</span></p>
+        <p class="total gallon">Total Gallon</p>
+        <p class="total count">{{qty}} x {{prices}} <span class="ion-float-right">${{total}}.00</span></p>
+        <p class="total discont_lbl">Total Distance <span class="ion-float-right">{{distance}}</span></p>
+        <p class="total">To Pay<span class="ion-float-right">${{total}}.00</span></p>
+        <div class="address_div">
+            <h3 class="add_lbl" (click)="changeAddress()">Select Address
+                <ion-button class="transparent_btn change_btn ion-float-end" (click)="changeAddress()">Change
+                </ion-button>
+            </h3>
+
+            <div class="add_div">
+                <ion-icon src="../../../assets/image_icon/location_add.svg"></ion-icon>
+                <p class="us_add">{{addr}}</p>
+            </div>
+        </div>
+        <div class="pickup_div ion-margin-top">
+            <div class="date_div">
+                <p class="date_lbl">Date</p>
+                <ion-datetime placeholder="Select Your Date" [min]="date" max="2030" id="dynamicDisabled" (ionChange)="mydate($event)" displayFormat="YYYY-MM-DD" [(ngModel)]="date" #dateCtrl="ngModel">
+                </ion-datetime>
+            </div>
+            <div class="date_div">
+                <p class="date_lbl">Time</p>
+                <ion-datetime placeholder="Select Your Time" id="dynamicDisabled" (ionChange)="mytime($event)" displayFormat="HH:mm:00" [(ngModel)]="time"></ion-datetime>
+            </div>
+        </div>
+        <div class="map_div">
+            <agm-map [styles]="styles" [latitude]="Centerlat" [longitude]="Centerlng" [disableDefaultUI]="true">
+                <agm-direction [origin]="origin" [destination]="destination" [renderOptions]="renderOptions" [markerOptions]="markerOptions">
+                </agm-direction>
+            </agm-map>
+        </div>
+        <ion-item class="vehicle_item" mode="md" lines="none">
+            <ion-label>
+                <h3 class="add_lbl">Vehicle Name
+                    <ion-button class="transparent_btn change_btn ion-float-end" (click)="changeVehicle()">Change
+                    </ion-button>
+                </h3>
+                <p class="data_lbl" *ngIf="vehicleInfo">{{vehicleInfo?.modelName}} {{vehicleInfo?.model}}</p>
+                <p class="data_lbl" *ngIf="!vehicleInfo" (click)="changeVehicle()">Select Vehicle</p>
+            </ion-label>
+        </ion-item>
+        <ion-item class="vehicle_item" mode="md" lines="none">
+            <ion-label>
+                <h3 class="add_lbl">Vehicle Number</h3>
+                <p *ngIf="vehicleInfo" class="data_lbl">{{vehicleInfo?.number}}</p>
+                <p *ngIf="!vehicleInfo" class="data_lbl" (click)="changeVehicle()">Select Vehicle</p>
+            </ion-label>
+        </ion-item>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-button color="var(--my_theme)" (click)="paymentMethod()" expand="full" class="ion-no-margin">
+        <p class="pay_lbl ion-margin-end">Booking</p>
+        <img class="ion-margin-start" src="../../../assets/image/arrow_img.png">
+    </ion-button>
+</ion-footer>

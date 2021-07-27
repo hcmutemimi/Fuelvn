@@ -1,0 +1,52 @@
+ion-content {
+  .card_div {
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.16);
+    margin-bottom: 20px;
+    img {
+      height: 76px;
+      width: 76px;
+      border-radius: 3px;
+    }
+    .data_div {
+      padding-left: 10px;
+      width: 100%;
+      position: relative;
+      .pop_Btn {
+        height: 18px;
+        --color: var(--silver);
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .name {
+        font-size: 16px;
+        font-family: "rubik_md";
+        color: var(--blue);
+        margin: 0;
+        span {
+          font-size: 15px;
+          font-family: "rubik_r";
+          color: var(--silver);
+        }
+      }
+      .model {
+        margin: 10px 0px;
+      }
+    }
+  }
+  ion-fab-button {
+    --box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+    --border-style: solid;
+    --border-width: 2px;
+    --border-color: var(--ion_white);
+    --background-activated: none;
+
+    ion-icon {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}

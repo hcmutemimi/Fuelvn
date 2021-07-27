@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>payment method</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal ion-padding-top">
+    <div class="pay_method">
+        <div class="card_div" [ngClass]="{active: card == 1}" (click)="payment()">
+            <div>
+                <img src="../../../assets/image/card.png" class="card_img" *ngIf="card==0">
+                <img src="../../../assets/image/white_card.png" *ngIf="card==1">
+                <h3 class="card_lbl" [ngClass]="{at_lbl: card==1}">Card Pay</h3>
+            </div>
+        </div>
+        <div class="card_div" [ngClass]="{active: paypal == 1}" (click)="paypalPay()">
+            <img src="../../../assets/image/paypal.png">
+        </div>
+        <div class="card_div" [ngClass]="{active: razors == 1}" (click)="payWithRa()">
+            <img src="../../../assets/image/razor.png">
+        </div>
+        <div class="card_div" [ngClass]="{active: stripes == 1}" (click)="paywithstripe()">
+            <img src="../../../assets/image/Stripe.png">
+        </div>
+    </div>
+    <div *ngIf="paypal === 1">
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+    </div>
+    <div *ngIf="stripes === 1">
+        <div class="card_div2 ion-margin-horizontal">
+            <div class="border_bottom"></div>
+            <ion-label class="card_label">
+                CARD NUMBER
+            </ion-label>
+            <ion-item lines="none" mode="md">
+                <ion-input name="number" [(ngModel)]="stripeData.number" class="card_num">
+                </ion-input>
+                <img slot="end" src="../../../assets/images/visa.png">
+            </ion-item>
+            <ion-row>
+                <ion-col class="ion-no-padding" size="6">
+                    <ion-label class="card_label">
+                        EXPRIRATION MONTH
+                    </ion-label>
+                    <ion-item lines="none" mode="md">
+                        <ion-input class="card_num" name="expMonth" [(ngModel)]="stripeData.expMonth">
+                        </ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col class="ion-no-padding" size="5" offset="1">
+                    <ion-label class="card_label">
+                        EXPRIRATION YEAR
+                    </ion-label>
+                    <ion-item lines="none" mode="md">
+                        <ion-input class="card_num" name="expYear" [(ngModel)]="stripeData.expYear">
+                        </ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="ion-no-padding" size="12">
+                    <ion-label class="card_label">
+                        CVV
+                    </ion-label>
+                    <ion-item lines="none" mode="md">
+                        <ion-input type="password" name="cvc" [(ngModel)]="stripeData.cvc" class="card_num">
+                        </ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-button *ngIf="card === 1" class="main_btn ion-text-capitalize" expand="full" (click)="payment()">
+        Continue
+    </ion-button>
+    <ion-button *ngIf="stripes === 1" class="main_btn ion-text-capitalize" expand="full" (click)="goPayStripe()">
+        Continue
+    </ion-button>
+    <ion-button *ngIf="razors === 1" class="main_btn ion-text-capitalize" expand="full" (click)="payWithRazor()">
+        Continue
+    </ion-button>
+</ion-footer>

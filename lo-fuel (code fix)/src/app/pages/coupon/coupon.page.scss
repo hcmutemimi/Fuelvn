@@ -1,0 +1,92 @@
+ion-content {
+  .stamp {
+    display: flex;
+    margin: 10px 0px 25px 0px;
+    .discount {
+      width: 50px;
+      min-width: 50px;
+      background-color: var(--my_theme);
+      border-radius: 0px 10px 10px 0px;
+      grid-row: 1 / span 5;
+      text-align: center;
+      writing-mode: vertical-rl;
+      line-height: 2rem;
+      transform: rotate(180deg);
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      .discount_lbl {
+        font-size: 15px;
+        color: var(--blue);
+        font-family: "rubik_md";
+      }
+    }
+    .data_div {
+      padding: 10px 15px;
+      position: relative;
+      .detail {
+        font-size: 15px;
+        color: var(--blue);
+        font-family: "rubik_md";
+        margin: 0;
+      }
+      .expire_div {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 15px;
+        .info_lbl {
+          font-size: 12px;
+          font-family: "rubik_r";
+          color: var(--gray);
+        }
+        .date_p {
+          font-size: 13px;
+        }
+        .applye_btn {
+          width: 84px;
+          height: 29px;
+          --border-radius: 3px;
+          --background: var(--my_theme);
+          --color: var(--white);
+          font-size: 15px;
+          font-family: "rubik_md";
+          text-transform: capitalize;
+          --background-activated: var(--my_theme);
+        }
+      }
+    }
+  }
+}
+
+.stamp {
+  background: var(--white);
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  &::before,
+  &::after {
+    background: var(--white);
+
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 16px;
+    position: absolute;
+    width: 16px;
+    z-index: 1;
+  }
+
+  &::before {
+    left: -8px;
+    top: 47%;
+    box-shadow: 3px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &::after {
+    right: -8px;
+    top: 47%;
+    box-shadow: -3px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>refer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h3 class="info_lbl">Get $10 in free Petrol, Diesel or Gas</h3>
+  <p class="detail">Give your friends $20 in FREE Petrol, Diesel,
+    Gas. You'll get $10 for every friend you refer.</p>
+  <div class="code_div">
+    <h3 class="code_lbl">Your Code : 23654</h3>
+  </div>
+  <div class="conatact_list">
+    <ion-searchbar mode="md" clearIcon="string" placeholder="Search Contacts.."></ion-searchbar>
+    <ion-item *ngFor="let item of contactList" lines="none">
+      <div class="font_div" slot="start">
+        {{item?.name | slice:0:1}}
+      </div>
+      <ion-label>
+        <h3 class="name"> {{item?.name}}</h3>
+        <p class="number">{{item?.number}}</p>
+      </ion-label>
+      <ion-checkbox slot="end" mode="ios"></ion-checkbox>
+    </ion-item>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-button class="main_btn ion-text-capitalize" expand="full">
+    Invite Friends
+  </ion-button>
+</ion-footer>

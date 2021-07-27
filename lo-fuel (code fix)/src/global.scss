@@ -1,0 +1,204 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+ion-button {
+    --ripple-color: transparent;
+    --box-shadow: none;
+}
+
+.transparent_btn {
+    --background: transparent;
+    --border: none;
+    --padding-start: none;
+    --padding-end: none;
+    --background-activated: none;
+    margin: 0px;
+    letter-spacing: 0;
+}
+
+.main_btn {
+    height: 50px;
+    --background: var(--my_theme);
+    --color: var(--white);
+    font-size: 18px;
+    font-family: "rubik_md";
+    margin: 0;
+    letter-spacing: 0;
+    --background-activated: none;
+}
+
+.main_btn2 {
+    height: 50px;
+    --background: var(--ion-color-danger);
+    --color: var(--white);
+    font-size: 18px;
+    font-family: "rubik_md";
+    margin: 0;
+    letter-spacing: 0;
+    --background-activated: none;
+}
+
+ion-header {
+    ion-toolbar {
+        border-radius: 0px 0px 20px 20px;
+        box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.16);
+        ion-title {
+            font-size: 18px;
+            font-family: "HornbillPersonalUse_b";
+            color: var(--my_theme);
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0 90px 1px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        ion-buttons {
+            position: relative;
+            ion-menu-button {
+                color: var(--my_theme);
+            }
+            ion-back-button {
+                color: var(--my_theme);
+            }
+        }
+    }
+}
+
+agm-map {
+    height: 100%;
+    width: 100%;
+}
+
+.location_div {
+    height: 70px;
+    width: 100%;
+    background-color: var(--my_theme);
+    position: absolute;
+    top: 20px;
+    padding: 0px 16px;
+    .loc_lbl {
+        font-size: 14px;
+        color: var(--white);
+        font-family: "rubik_r";
+        margin-bottom: 0;
+    }
+    .input_div {
+        display: flex;
+        align-items: center;
+        ion-icon {
+            width: 22px;
+            height: 19px;
+        }
+        ion-input {
+            font-size: 16px;
+            font-family: "rubik_md";
+            color: var(--white);
+            --padding-top: 8px;
+        }
+    }
+}
+
+.successModal {
+    --height: 380px;
+    --max-height: 380px;
+    padding: 0px 20px;
+    --border-radius: 5px;
+}
+
+.prescription {
+    --height: 50px;
+    --max-height: 50px;
+    --border-radius: 5px;
+    padding: 0px 20px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.16);
+    .popover-content {
+        // top: 100px !important;
+        // bottom: inherit !important;
+        // left: inherit !important;
+        // right: 16px !important;
+        // transform-origin: right top !important;
+        width: 90px;
+        border-radius: 5px;
+    }
+}
+
+app-refer {
+    .sc-ion-searchbar-md-h {
+        --box-shadow: none;
+    }
+    .searchbar-search-icon.sc-ion-searchbar-md {
+        color: var(--blue);
+        left: 10px;
+        top: 11px;
+        width: 17px;
+        height: 16px;
+    }
+    .searchbar-input.sc-ion-searchbar-md {
+        padding-left: unset;
+        padding-right: unset;
+        -webkit-padding-start: 50px;
+        padding-inline-start: 50px;
+        -webkit-padding-end: 10px;
+        padding-inline-end: 40px;
+        border-bottom: dashed;
+        border-bottom-width: 1px;
+        border-bottom-color: var(--silver);
+        font-size: 18px;
+        color: var(--blue);
+        font-family: "rubik_md";
+    }
+}
+
+.spinner-lines.sc-ion-loading-ios,
+.spinner-lines-small.sc-ion-loading-ios,
+.spinner-bubbles.sc-ion-loading-ios,
+.spinner-circles.sc-ion-loading-ios,
+.spinner-crescent.sc-ion-loading-ios,
+.spinner-dots.sc-ion-loading-ios {
+    color: var(--ion-color-primary);
+    --backdrop-opacity: 0.5 !important;
+}
+
+.sc-ion-loading-ios-h {
+    --spinner-color: var(--ion-color-primary) !important;
+    font-size: 14px;
+    --backdrop-opacity: 0.5 !important;
+}
+
+[no-data] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 33%;
+}

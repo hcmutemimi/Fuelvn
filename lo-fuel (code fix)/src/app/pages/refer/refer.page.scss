@@ -1,0 +1,72 @@
+ion-content {
+  .info_lbl {
+    font-size: 18px;
+    color: var(--blue);
+    font-family: "rubik_md";
+    text-align: center;
+  }
+  .detail {
+    font-size: 15px;
+    color: var(--gray);
+    font-family: "rubik_r";
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .code_div {
+    height: 40px;
+    width: 160px;
+    background-color: var(--my_theme);
+    border-radius: 3px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .code_lbl {
+      color: var(--white);
+      font-size: 15px;
+      font-family: "rubik_r";
+      margin: 0;
+    }
+  }
+
+  .conatact_list {
+    padding-top: 30px;
+
+    .font_div {
+      height: 40px;
+      width: 40px;
+      background-color: var(--red);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-family: "rubik_r";
+      color: var(--white);
+    }
+    .name {
+      font-size: 18px;
+      color: var(--blue);
+      font-family: "rubik_md";
+    }
+    .number {
+      font-size: 14px;
+      color: var(--gray);
+      font-family: "rubik_r";
+    }
+    ion-checkbox {
+      height: 17px;
+      width: 17px;
+    }
+    ion-searchbar {
+      --color: var(--my_theme);
+      --placeholder-opacity: 1;
+      font-size: 18px;
+      font-family: "nunito_b";
+    }
+    ion-item {
+      --inner-padding-end: 0;
+    }
+  }
+}

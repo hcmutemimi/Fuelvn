@@ -1,0 +1,102 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>history</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+    <div class="currant">
+        <p class="main_lbl">Current Order</p>
+        <div class="no-data" *ngIf="booking?.length ==0">
+            <img src="../../../assets/nodata.png" alt="" height="140px" width="140px">
+        </div>
+        <div *ngIf="booking?.length > 0">
+            <div class="card_div" *ngFor="let item of booking" (click)="Receipt(item?.id,item?.provider_id)">
+                <div class="info_div">
+                    <img *ngIf="item?.provider?.imageUri" [src]="item?.provider?.imageUri">
+                    <img *ngIf="!item?.provider?.imageUri" src="../../../assets/placeholder.png">
+                    <div class="data_div">
+                        <h3 class="name">{{item?.provider?.name}}</h3>
+                        <p class="od_no">Order No. #{{item?.order_id}}</p>
+                        <p class="od_no add_lbl">{{item?.address}}</p>
+                        <div class="pen_div" *ngIf="item?.status == 0">
+                            <p class="pen_lbl">Newer</p>
+                        </div>
+                        <div class="pen_div cm_div" *ngIf="item?.status == 1">
+                            <p class="pen_lbl">Accepted</p>
+                        </div>
+                        <div class="pen_div cm_div" *ngIf="item?.status == 2">
+                            <p class="pen_lbl">Another Way</p>
+                        </div>
+                        <div class="pen_div cm_div" *ngIf="item?.status == 3">
+                            <p class="pen_lbl">Done</p>
+                        </div>
+                        <div class="pen_div" *ngIf="item?.status == 4">
+                            <p class="pen_lbl">Cancle</p>
+                        </div>
+                        <div class="pen_div" *ngIf="item?.status == 6">
+                            <p class="pen_lbl">Rejected</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail_div">
+                    <p class="od_no title_lbl">Date & Time <span class="ion-float-right">Price</span></p>
+                    <p class="data_lbl">{{item?.time}} <span class="ion-float-right">{{item?.currency}} {{item?.price}}</span></p>
+                    <p class="od_no title_lbl margin-top">Vehicle Name <span class="ion-float-right">Vehicle Number</span></p>
+                    <p class="data_lbl">{{item?.model?.model?.name}} <span class="ion-float-right">{{item?.model?.reg_number}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="past">
+        <p class="main_lbl">Past Order</p>
+        <div class="no-data" *ngIf="booking2?.length == 0">
+            <img src="../../../assets/nodata.png" alt="" height="140px" width="140px">
+        </div>
+        <div *ngIf="booking2?.length > 0">
+            <div class="card_div" *ngFor="let item of booking2" (click)="Receipt(item?.id,item?.provider_id)">
+                <div class="info_div">
+                    <img *ngIf="item?.provider?.imageUri" [src]="item?.provider?.imageUri">
+                    <img *ngIf="!item?.provider?.imageUri" src="../../../assets/placeholder.png">
+                    <div class="data_div">
+                        <h3 class="name">{{item?.provider?.name}}</h3>
+                        <p class="od_no">Order No. #{{item?.order_id}}</p>
+                        <p class="od_no add_lbl">{{item?.address}}</p>
+                        <div class="pen_div" *ngIf="item?.status == 0">
+                            <p class="pen_lbl">Newer</p>
+                        </div>
+                        <div class="pen_div cm_div" *ngIf="item?.status == 1">
+                            <p class="pen_lbl">Accepted</p>
+                        </div>
+                        <div class="pen_div cm_div" *ngIf="item?.status == 2">
+                            <p class="pen_lbl">Another Way</p>
+                        </div>
+                        <div class="pen_div cm_div" *ngIf="item?.status == 3">
+                            <p class="pen_lbl">Done</p>
+                        </div>
+                        <div class="pen_div" *ngIf="item?.status == 4">
+                            <p class="pen_lbl">Cancle</p>
+                        </div>
+                        <div class="pen_div" *ngIf="item?.status == 6">
+                            <p class="pen_lbl">Rejected</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail_div">
+                    <p class="od_no title_lbl">Date & Time <span class="ion-float-right">Price</span></p>
+                    <p class="data_lbl">{{item?.time}} <span class="ion-float-right">{{item?.currency}} {{item?.price}}</span></p>
+                    <p class="od_no title_lbl margin-top">Vehicle Name <span class="ion-float-right">Vehicle Number</span></p>
+                    <p class="data_lbl">{{item?.model?.model?.name}} <span class="ion-float-right">{{item?.model?.reg_number}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

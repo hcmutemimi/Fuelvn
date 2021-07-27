@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{page}} Detail</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <agm-map [styles]="styles" [latitude]="latitude" [longitude]="longitude" [disableDefaultUI]="true">
+        <agm-marker *ngFor="let item of provider" [latitude]="item?.lat" [longitude]="item?.lang" [iconUrl]="Truckicon">
+        </agm-marker>
+    </agm-map>
+    <div class="location_div">
+        <h3 class="loc_lbl">Delivery Location</h3>
+        <div class="input_div">
+            <ion-icon src="../../../assets/image_icon/location.svg"></ion-icon>
+            <input autofocus="true" ngx-google-places-autocomplete value="{{addr}}" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
+        </div>
+    </div>
+    <div class="gallon_div">
+        <h3 class="how_lbl">How Many Gallon?</h3>
+        <div class="info_div">
+            <div class="gas_div">
+                <div class="cng_div" *ngFor="let item of sub_fuel_type" (click)="match(item)" [class.active]="select == item.name">
+                    <h3 class="gs_lbl">{{item?.name}}</h3>
+                </div>
+            </div>
+            <ion-item lines="none" mode="md">
+                <ion-select placeholder="Select Provider" (ionChange)="providerCost($event)" value="{{selectPro}}">
+                    <ion-select-option *ngFor="let item of provider" value="{{item?.id}}">{{item?.name}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <div class="div_item">
+                <span *ngFor="let item of quantityArray" [class.at_span]="qty == item" (click)="selectQty(item)">{{item?.p}}</span>
+            </div>
+            <ion-item lines="none" mode="md">
+                <ion-label class="ion-text-center" *ngFor="let item of pricing" (click)="myPrice(item)">
+                    <h3 class="info_lbl">{{item?.name}}</h3>
+                    <p class="price_lbl" [class.my_price]="priceSelect == item.name">{{currency}}{{item?.price}}</p>
+                </ion-label>
+                <p *ngIf="pricing?.length == 0" class="ion-text-center err">
+                    No Data Found
+                </p>
+            </ion-item>
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border" *ngIf="totalAmount > 0">
+    <div class="btn_div" (click)="cartData()">
+        <p class="pay_lbl">Proceed to pay {{currency}}{{totalAmount}}</p>
+        <img src="../../../assets/image/arrow_img.png">
+    </div>
+</ion-footer>

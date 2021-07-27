@@ -1,0 +1,72 @@
+ion-content {
+  ion-slides {
+    height: 550px;
+    ion-slide {
+      display: block;
+      .skip_lbl {
+        font-size: 22px;
+        color: var(--my_theme);
+        font-family: "rubik_md";
+        padding: 0px 16px;
+        margin-bottom: 35px;
+      }
+      .data_div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        .park_img {
+          text-align: end;
+          width: 25%;
+        }
+        .info_div {
+          padding-left: 20px;
+          text-align: left;
+          .name {
+            font-size: 18px;
+            color: var(--my_theme);
+            font-family: "rubik_r";
+            margin: 0;
+          }
+          .detail_p {
+            font-size: 15px;
+            font-family: "rubik_r";
+            color: var(--gray);
+            margin: 0;
+          }
+        }
+        .regular_lbl {
+          font-size: 18px;
+          color: var(--gray);
+          font-family: "rubik_r";
+          margin: 0;
+          padding-left: 20px;
+        }
+        .regular_img {
+          width: 20%;
+        }
+      }
+      .img_div {
+        padding: 100px 0px 70px 0px;
+      }
+      .info_lbl {
+        font-size: 18px;
+        font-family: "rubik_r";
+        color: var(--my_theme);
+        padding: 0px 16px;
+      }
+      .get_lbl {
+        margin-top: 50px;
+      }
+    }
+  }
+  .skip {
+    margin: 0px;
+    height: 46px;
+    width: 100px;
+    font-size: 16px;
+    font-family: "rubik_md";
+    --background: var(--my_theme);
+    --border-radius: 24px 0px 0px 24px;
+    --background-activated: var(--my_theme);
+  }
+}

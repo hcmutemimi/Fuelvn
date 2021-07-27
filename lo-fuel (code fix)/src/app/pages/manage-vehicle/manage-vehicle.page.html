@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Vehicle</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class="card_div" *ngFor="let item of vehicle">
+        <img *ngIf="item?.imageUri" [src]="item?.imageUri" height="76px" width="76px">
+        <img *ngIf="!item?.imageUri" src="../../../assets/placeholder.png" alt="" height="76px" width="76px">
+        <div class="data_div">
+            <ion-button class="transparent_btn  pop_Btn" (click)="presentPopover($event,item)">
+                <ion-icon name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+            <h3 class="name">Vehicle : <span> {{item?.model?.brand?.name}} {{item?.model?.name}}</span>
+            </h3>
+            <p class="name model">Model :<span> {{item?.modelYear}}</span>&nbsp; Color : <span>{{item?.color}}</span></p>
+            <p class="name cno">No. Plate : <span>{{item?.reg_number}}</span></p>
+        </div>
+    </div>
+    <div *ngIf="vehicle?.length == 0" no-data>
+        <img src="../../../assets/nodata.png" alt="">
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="addVehicle()">
+            <ion-icon src="../../../assets/image_icon/plus.svg"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

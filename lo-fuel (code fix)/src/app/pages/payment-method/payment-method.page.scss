@@ -1,0 +1,76 @@
+ion-content {
+    .pay_method {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 20px;
+        .card_div {
+            height: 120px;
+            border-radius: 5px;
+            border: dashed 1px var(--my_theme);
+            width: 47%;
+            margin-bottom: 30px;
+            box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.16);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .card_img {
+                height: 50px;
+                width: 57px;
+            }
+            .card_lbl {
+                font-size: 15px;
+                font-family: "rubik_md";
+                color: var(--blue);
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
+        }
+        .active {
+            background-color: var(--my_theme);
+            box-shadow: none;
+            .at_lbl {
+                color: var(--white);
+            }
+        }
+    }
+    .card_div2 {
+        margin-left: 32px;
+        margin-right: 34px;
+        .btn_lbl {
+            margin-bottom: 16px;
+            font-family: rubik_md;
+            color: var(--theme-color);
+            .add_btn {
+                --color: #3171e0;
+                text-transform: capitalize;
+                font-family: rubik_md;
+                font-size: 18px;
+                height: 20px;
+            }
+        }
+        ion-item {
+            --background: white;
+            box-shadow: 0px 1px 10px 1px #eeeeee;
+            border: 0;
+            border-radius: 3px;
+            margin: 5px 0px 16px 0px;
+            padding: 0px;
+            .card_num {
+                font-size: 14px;
+                color: var(--theme-color);
+                font-family: rubik_md;
+                border: none;
+            }
+            // ion-radio {
+            // --color-checked: var(--shine-wash-theme);
+            // }
+        }
+        .card_label {
+            font-family: rubik_md;
+            font-size: 10px;
+            color: #1492E6;
+            margin-bottom: 3px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>notification</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <h3 class="main_lbl">Email</h3>
+
+    <div class="data_div" (click)="updatePro()">
+        <p class="info_lbl">Announcements
+            <ion-toggle class="ion-float-right" [checked]="noti == 1" mode="md"></ion-toggle>
+        </p>
+        <p class="deteail">New services, holidays closures, and other important news about Lofuel</p>
+    </div>
+</ion-content>

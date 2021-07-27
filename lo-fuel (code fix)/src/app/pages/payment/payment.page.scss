@@ -1,0 +1,79 @@
+ion-content {
+  .type_div {
+    height: 90px;
+    background-color: var(--div_back);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+  }
+
+  .info_div {
+    margin-top: 30px;
+    ion-item {
+      --background: var(--div_back);
+      border-radius: 3px;
+      margin: 5px 0px 16px 0px;
+      .card_num {
+        font-size: 14px;
+        color: var(--blue);
+        font-family: "rubik_r";
+      }
+    }
+    .card_label {
+      font-family: "rubik_md";
+      font-size: 11px;
+      color: var(--blue);
+      margin-bottom: 3px;
+    }
+  }
+  .img_div {
+    background-image: url("../../../assets/image/visa_card.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 181px;
+    width: 283px;
+    margin: auto;
+    padding: 50px 0px 0px 30px;
+    .num_lbl {
+      font-size: 15px;
+      color: var(--white);
+      font-family: "rubik_md";
+      word-spacing: 12px;
+    }
+    .name {
+      font-size: 12px;
+      margin-top: 0px;
+      word-spacing: inherit;
+    }
+  }
+  ion-col {
+    padding: 0;
+    .valid_div {
+      display: flex;
+      align-items: center;
+      .form_div {
+        margin-right: 10px;
+        .valid_lbl {
+          font-size: 10px;
+          font-family: "rubik_r";
+          color: var(--white);
+          margin: 0;
+          text-transform: uppercase;
+        }
+      }
+      .date_lbl {
+        font-size: 14px;
+        font-family: "rubik_md";
+        color: var(--white);
+        margin: 0;
+      }
+    }
+  }
+}
+
+ion-footer {
+  .main_btn {
+    text-transform: none;
+  }
+}

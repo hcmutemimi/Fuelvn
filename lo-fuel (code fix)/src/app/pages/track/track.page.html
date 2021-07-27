@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar mode="md">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Map</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <agm-map [styles]="styles" [latitude]="Centerlat" [longitude]="Centerlng" [disableDefaultUI]="true">
+        <agm-direction [origin]="origin" [destination]="destination" [renderOptions]="renderOptions" [markerOptions]="markerOptions">
+        </agm-direction>
+        <!-- <agm-direction [origin]="newori" [destination]="origin" [renderOptions]="renderOptions" [markerOptions]="makOptions">
+        </agm-direction> -->
+    </agm-map>
+    <div class="location_div">
+        <h3 class="loc_lbl">Delivery Location</h3>
+        <div class="input_div">
+            <ion-icon src="../../../assets/image_icon/location.svg"></ion-icon>
+            <ion-input value="{{address}}" readonly></ion-input>
+        </div>
+    </div>
+
+
+</ion-content>

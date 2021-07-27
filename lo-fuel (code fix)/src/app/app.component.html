@@ -1,0 +1,41 @@
+<ion-app>
+    <ion-split-pane contentId="main-content">
+        <ion-menu contentId="main-content" type="overlay" mode="md">
+            <ion-header class="ion-no-border">
+                <ion-toolbar mode="md">
+                    <ion-buttons slot="end">
+                        <ion-button (click)="closeMenu()">
+                            <ion-icon name="chevron-back-outline">
+                            </ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                </ion-toolbar>
+                <div class="header_div" *ngIf="profile" (click)="profileGo()">
+                    <img src="{{profile?.imageUri}}" class="pro_img">
+                    <div class="back_div">
+                        <h3 class="name">{{profile?.name}}</h3>
+                        <div class="email_div">
+                            <p class="email">{{profile?.email}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ion-header>
+            <ion-content>
+                <ion-list id="inbox-list">
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+                        <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i" mode="md">
+                            <ion-icon slot="start" [src]="p.icon"></ion-icon>
+                            <ion-label>{{ p.title }}</ion-label>
+                        </ion-item>
+
+                    </ion-menu-toggle>
+                    <ion-item lines="none" (click)="signOut()" mode="md">
+                        <ion-icon slot="start" src="../assets/image_icon/sign-out.svg"></ion-icon>
+                        <ion-label>Signout</ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-menu>
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

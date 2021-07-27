@@ -1,0 +1,140 @@
+ion-content {
+    .active {
+        background-color: var(--my_theme);
+        color: white;
+    }
+    .err {
+        color: red;
+        font-family: 'rubik_md';
+        font-size: 13px;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    .gallon_div {
+        height: 305px;
+        box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.16);
+        width: 100%;
+        background-color: var(--white);
+        position: absolute;
+        bottom: 0;
+        border-radius: 20px 20px 0px 0px;
+        .how_lbl {
+            font-size: 18px;
+            color: var(--blue);
+            font-family: "rubik_md";
+            text-align: center;
+        }
+        .info_div {
+            padding: 0px 20px;
+            .gas_div {
+                display: flex;
+                justify-content: space-around;
+                padding: 12px 0px;
+                .cng_div {
+                    height: 40px;
+                    width: 130px;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .gs_lbl {
+                        font-size: 15px;
+                        color: var(--my_theme);
+                        font-family: "rubik_md";
+                        margin: 0;
+                    }
+                }
+                .active {
+                    background-color: var(--my_theme);
+                    box-shadow: none;
+                    .gs_lbl {
+                        color: var(--white);
+                    }
+                }
+            }
+            ion-item {
+                border-bottom: dashed;
+                border-bottom-width: 1px;
+                border-bottom-color: var(--silver);
+                --padding-start: 0;
+                --inner-padding-end: 0;
+                ion-select {
+                    max-width: 100%;
+                    font-family: "rubik_md";
+                    font-size: 15px;
+                    padding: 0;
+                    color: var(--blue);
+                    display: contents;
+                }
+                .info_lbl {
+                    font-size: 15px;
+                    color: var(--blue);
+                    font-family: "rubik_r";
+                }
+                .price_lbl {
+                    font-size: 15px;
+                    color: var(--blue);
+                    font-family: "rubik_md";
+                }
+                .at_price {
+                    color: var(--my_theme);
+                }
+                .my_price {
+                    color: var(--my_theme);
+                }
+            }
+            .div_item {
+                border-bottom: dashed;
+                border-bottom-width: 1px;
+                border-bottom-color: var(--silver);
+                padding: 20px 0px;
+                display: flex;
+                justify-content: space-evenly;
+                span {
+                    font-size: 18px;
+                    font-family: "rubik_md";
+                    color: var(--blue);
+                }
+                .at_span {
+                    color: var(--my_theme);
+                }
+            }
+        }
+    }
+}
+
+.map {
+    height: 100%;
+    width: 100%;
+}
+
+input {
+    background: transparent;
+    border: none;
+    font-family: 'rubik_r';
+    margin-left: 10px;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+ion-footer {
+    .btn_div {
+        background-color: var(--my_theme);
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 16px;
+        .pay_lbl {
+            font-size: 18px;
+            color: var(--white);
+            font-family: "rubik_md";
+            margin: 0;
+        }
+    }
+}

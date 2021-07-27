@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.979" height="20.979" viewBox="0 0 20.979 20.979">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20.979" height="20.979" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_6423" data-name="Group 6423" transform="translate(-317 -252)">
+    <g id="Group_6422" data-name="Group 6422">
+      <g id="Group_6421" data-name="Group 6421">
+        <g id="Group_6420" data-name="Group 6420">
+          <g id="Repeat_Grid_3" data-name="Repeat Grid 3" transform="translate(317 252)" clip-path="url(#clip-path)">
+            <g transform="translate(-314 -300)">
+              <circle id="Oval" cx="10.489" cy="10.489" r="10.489" transform="translate(314 300)" fill="#c7c7c7"/>
+            </g>
+          </g>
+          <g id="Rotate_Opacity" data-name="Rotate + Opacity" transform="translate(327.738 254.979) rotate(45)">
+            <path id="Combined_Shape" data-name="Combined Shape" d="M4.473,10V6.215H.8a.811.811,0,0,1,0-1.622H4.473V.811a.8.8,0,1,1,1.6,0V4.593H9.748a.811.811,0,0,1,0,1.622H6.077V10a.8.8,0,1,1-1.6,0Z" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

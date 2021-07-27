@@ -1,0 +1,81 @@
+ion-header {
+  ion-toolbar {
+    border-radius: none;
+    box-shadow: none;
+  }
+  ion-back-button {
+    color: var(--blue);
+  }
+}
+
+ion-content {
+  .main_lbl {
+    font-size: 30px;
+    color: var(--my_theme);
+    font-family: "rubik_md";
+    text-align: center;
+  }
+  .info_lbl {
+    font-size: 15px;
+    color: var(--gray);
+    font-family: "rubik_r";
+    text-align: center;
+  }
+  .number-input {
+    margin: 0px 16px;
+    margin-top: 32px;
+    background: var(--input_back);
+    border-radius: 22px;
+    height: 44px;
+    padding: 8px 16px;
+    display: flex;
+    position: relative;
+
+    .code-div {
+      width: 100px;
+      border-right: 1px solid var(--lht_gray);
+      span {
+        color: var(--blue);
+        font-size: 15px;
+        font-family: "rubik_md";
+      }
+    }
+    .number-div {
+      padding-left: 8px;
+      .input-div {
+        width: 84%;
+        ion-input {
+          font-size: 15px;
+          font-family: "rubik_md";
+          --color: var(--blue);
+          --padding-top: 9px;
+          position: relative;
+          top: -7px;
+        }
+      }
+    }
+    .button-div {
+      width: 25px;
+      display: flex;
+      align-items: center;
+      ion-icon {
+        height: 20px;
+        width: 20px;
+      }
+      .btn-clear {
+        --padding-start: 0px;
+        --padding-end: 0px;
+        margin-top: 0px;
+      }
+    }
+  }
+  .continue_div {
+    margin-top: 50px;
+  }
+  .cn_btn {
+    width: 100%;
+    text-transform: capitalize;
+    height: 44px;
+    font-size: 16px;
+  }
+}
