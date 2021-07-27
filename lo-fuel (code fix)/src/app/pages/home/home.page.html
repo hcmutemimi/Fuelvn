@@ -3,7 +3,7 @@
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Lofuel</ion-title>
+        <ion-title>Fuelvn</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
         <agm-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconUrl"></agm-marker>
     </agm-map>
     <div class="location_div">
-        <h3 class="loc_lbl">Delivery Location</h3>
+        <h3 class="loc_lbl">Chọn vị trí</h3>
         <div class="input_div">
             <ion-icon src="../../../assets/image_icon/location.svg"></ion-icon>
             <input autofocus="true" ngx-google-places-autocomplete value="{{address}}" #placesref="ngx-places" (onAddressChange)="handleAddressChange($event)">

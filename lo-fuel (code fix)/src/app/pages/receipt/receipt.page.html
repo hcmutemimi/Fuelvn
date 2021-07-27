@@ -7,7 +7,7 @@
         <ion-buttons slot="end">
             <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
         </ion-buttons>
-        <ion-title>receipt</ion-title>
+        <ion-title>Biên nhận</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -22,7 +22,7 @@
 
                 <p class="scan_p">{{data?.provider?.name}}</p>
                 <p class="add_lbl">{{data?.address}}</p>
-                <p class="add_lbl or_no">Order No. #{{data?.order_id}}</p>
+                <p class="add_lbl or_no">Số hóa đơn. #{{data?.order_id}}</p>
 
                 <ion-row>
                     <ion-col>
@@ -34,31 +34,31 @@
                         <p class="date">{{data?.time | date: "HH:mm:ss"}}</p>
                     </ion-col> -->
                     <ion-col>
-                        <h3 class="date_lbl">Payment Status</h3>
+                        <h3 class="date_lbl">Tình trạng thanh toán</h3>
                         <div class="pen_div">
-                            <p class="date" *ngIf="data?.payment_status == 0">Pending</p>
-                            <p class="date" *ngIf="data?.payment_status == 1">Completed</p>
+                            <p class="date" *ngIf="data?.payment_status == 0">Đang chờ</p>
+                            <p class="date" *ngIf="data?.payment_status == 1">Hoàn thành</p>
                         </div>
                     </ion-col>
                 </ion-row>
 
                 <ion-row>
                     <ion-col>
-                        <h3 class="date_lbl">Vehicle Name</h3>
+                        <h3 class="date_lbl">Tên phương tiện</h3>
                         <p class="date">{{data?.model?.model?.brand?.name}}</p>
                     </ion-col>
                     <ion-col>
-                        <h3 class="date_lbl">Vehicle Number</h3>
+                        <h3 class="date_lbl">Số hiệu phương tiện</h3>
                         <p class="date">{{data?.model?.reg_number}}</p>
                     </ion-col>
                 </ion-row>
                 <ion-row class="last_row">
                     <ion-col>
-                        <h3 class="date_lbl">Payment</h3>
+                        <h3 class="date_lbl">Thanh toán</h3>
                         <p class="date">{{data?.currency}} {{data?.price}}.00</p>
                     </ion-col>
                     <ion-col>
-                        <h3 class="date_lbl">Payment Method</h3>
+                        <h3 class="date_lbl">Phương thức thanh toán</h3>
                         <p class="date">{{data?.payment_method}}</p>
                     </ion-col>
                 </ion-row>
@@ -78,7 +78,7 @@
                     <ion-textarea placeholder="Type your review" [(ngModel)]="comment" mode="md" rows="3"></ion-textarea>
                 </div>
                 <ion-button class="send_btn" (click)="history()">
-                    Send
+                    Gửi
                 </ion-button>
             </div>
 
@@ -99,20 +99,20 @@
 
 
     <ion-button class="main_btn track_Btn" (click)="paymentDone()" *ngIf="data?.status == 3 && data?.status !== 4 && data?.status !== 6 && data?.payment_status == 0">
-        Payment
+        Thanh toán
     </ion-button>
 
     <ion-button class="main_btn2 track_Btn" (click)="paymentCancel()" *ngIf="data?.status !== 4 && data?.status !== 3 && data?.status !== 6">
-        Cancel
+        Hủy
     </ion-button>
     <ion-button class="main_btn track_Btn" *ngIf="data?.payment_status === 1">
-        Completed
+        Hoàn thành
     </ion-button>
     <ion-button class="main_btn2 track_Btn" *ngIf="data?.status === 4">
-        Canceled
+        Đdã hủy
     </ion-button>
     <ion-button class="main_btn2 track_Btn" *ngIf="data?.status === 6">
-        Rejected
+        Từ chối
     </ion-button>
 
 

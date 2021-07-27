@@ -7,7 +7,7 @@
         <ion-buttons slot="end">
             <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
         </ion-buttons>
-        <ion-title>Vehicle</ion-title>
+        <ion-title>Phương tiện</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -19,10 +19,10 @@
             <ion-button class="transparent_btn  pop_Btn" (click)="presentPopover($event,item)">
                 <ion-icon name="ellipsis-vertical"></ion-icon>
             </ion-button>
-            <h3 class="name">Vehicle : <span> {{item?.model?.brand?.name}} {{item?.model?.name}}</span>
+            <h3 class="name">Phương tiện : <span> {{item?.model?.brand?.name}} {{item?.model?.name}}</span>
             </h3>
-            <p class="name model">Model :<span> {{item?.modelYear}}</span>&nbsp; Color : <span>{{item?.color}}</span></p>
-            <p class="name cno">No. Plate : <span>{{item?.reg_number}}</span></p>
+            <p class="name model">Mẫu :<span> {{item?.modelYear}}</span>&nbsp; Màu : <span>{{item?.color}}</span></p>
+            <p class="name cno">Biển số : <span>{{item?.reg_number}}</span></p>
         </div>
     </div>
     <div *ngIf="vehicle?.length == 0" no-data>

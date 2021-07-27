@@ -6,7 +6,7 @@
         <ion-buttons slot="end">
             <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
         </ion-buttons>
-        <ion-title>map</ion-title>
+        <ion-title>Bản đồ</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
         </agm-marker>
     </agm-map>
     <div class="location_div">
-        <h3 class="loc_lbl">Delivery Location</h3>
+        <h3 class="loc_lbl">Chọn vị trí</h3>
         <div class="input_div">
             <ion-icon src="../../../assets/image_icon/location.svg"></ion-icon>
             <input autofocus="true" ngx-google-places-autocomplete value="{{address}}" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
@@ -25,6 +25,6 @@
 </ion-content>
 <ion-footer class="ion-no-border">
     <ion-button class="main_btn ion-text-capitalize" expand="full" (click)="cart()">
-        Save
+        Cập nhật
     </ion-button>
 </ion-footer>

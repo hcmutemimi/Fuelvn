@@ -27,11 +27,9 @@ export class SettingPage implements OnInit {
     this.api.getData("privacy").subscribe(
       (successs: any) => {
         if (successs.successs) {
-          console.log(successs.data);
         }
       },
       (err) => {
-        console.log(err);
       }
     );
   }

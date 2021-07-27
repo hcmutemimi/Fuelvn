@@ -6,7 +6,7 @@
         <ion-buttons slot="end">
             <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
         </ion-buttons>
-        <ion-title>{{page}} Detail</ion-title>
+        <ion-title>{{page}} Chi tiết</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -16,14 +16,14 @@
         </agm-marker>
     </agm-map>
     <div class="location_div">
-        <h3 class="loc_lbl">Delivery Location</h3>
+        <h3 class="loc_lbl">Chọn vị trí</h3>
         <div class="input_div">
             <ion-icon src="../../../assets/image_icon/location.svg"></ion-icon>
             <input autofocus="true" ngx-google-places-autocomplete value="{{addr}}" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
         </div>
     </div>
     <div class="gallon_div">
-        <h3 class="how_lbl">How Many Gallon?</h3>
+        <h3 class="how_lbl">Bao nhiêu Gallon?</h3>
         <div class="info_div">
             <div class="gas_div">
                 <div class="cng_div" *ngFor="let item of sub_fuel_type" (click)="match(item)" [class.active]="select == item.name">
@@ -44,7 +44,7 @@
                     <p class="price_lbl" [class.my_price]="priceSelect == item.name">{{currency}}{{item?.price}}</p>
                 </ion-label>
                 <p *ngIf="pricing?.length == 0" class="ion-text-center err">
-                    No Data Found
+                Không tìm thấy dữ liệu
                 </p>
             </ion-item>
         </div>

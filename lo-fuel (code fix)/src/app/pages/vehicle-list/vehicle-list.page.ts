@@ -24,14 +24,12 @@ export class VehicleListPage implements OnInit {
       (success: any) => {
         this.util.dismissLoading();
         if (success.success) {
-          console.log(success.data);
           this.data = success.data;
           
         }
       },
       (err) => {
         this.util.dismissLoading();
-        console.log(err);
         
       }
     );
@@ -39,7 +37,6 @@ export class VehicleListPage implements OnInit {
   isselect: any;
   selectVehicle(item) {
     this.isselect = item;
-    console.log(item);
     this.v = item.id;
     this.api.veId = item.id;
     let data = {

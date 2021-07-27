@@ -212,11 +212,6 @@ export class CartPage implements OnInit {
     this.proLangg = JSON.parse(localStorage.getItem("proLangg")); 
   }
   async ngOnInit() {
-    console.log("this.api.long",this.api.long);
-    console.log("this.api.lat",this.api.lat);
-    console.log("this.api.proLat",this.proLattt);
-    console.log("this.api.proLong",this.proLangg);
-    
     this.util.getDistanceFromLatLonInKm(
       this.api.lat,
       this.api.long,
@@ -231,12 +226,9 @@ export class CartPage implements OnInit {
         this.proLangg
       )
      .toFixed(1);
-    console.log("this.distance", this.distance);
 
     this.Centerlat = JSON.parse(localStorage.getItem("lat"));
     this.Centerlng = JSON.parse(localStorage.getItem("lang"));
-    console.log("this.Centerlat", this.Centerlat);
-    console.log("this.Centerlng", this.Centerlng);
 
     this.origin = { lat: this.api.lat, lng: this.api.long };
     this.destination = { lat: this.proLattt, lng: this.proLangg };
@@ -260,8 +252,6 @@ export class CartPage implements OnInit {
    this.util.getDistanceFromLatLonInKm(
       this.api.lat,
      this.api.long,
-      // this.api.proLat,
-        // this.api.proLong,
       this.proLattt,
       this.proLangg
     );
@@ -269,22 +259,16 @@ export class CartPage implements OnInit {
       .getDistanceFromLatLonInKm(
         this.api.lat,
         this.api.long,
-        // this.api.proLat,
-        // this.api.proLong,
         this.proLattt,
         this.proLangg
       )
        .toFixed(1);
-    // console.log("this.distance", this.distance);
 
     this.Centerlat = JSON.parse(localStorage.getItem("lat"));
     this.Centerlng = JSON.parse(localStorage.getItem("lang"));
-    // console.log("this.Centerlat", this.Centerlat);
-    // console.log("this.Centerlng", this.Centerlng);
 
     this.origin = { lat: this.proLattt, lng: this.proLangg };
     this.destination = { lat: this.proLattt, lng: this.proLangg };
-    // this.destination = { lat: this.api.proLat, lng: this.api.proLong };
     this.addr = localStorage.getItem("addressOfLast");
     let token = localStorage.getItem("token")
       ? localStorage.getItem("token")
@@ -314,13 +298,13 @@ export class CartPage implements OnInit {
   }
   paymentMethod() {
     if (this.addr == null) {
-      this.util.presentToast("Select Your Address");
+      this.util.presentToast("Chọn địa chỉ của bạn");
     } else if (this.times == "") {
-      this.util.presentToast("Select Time");
+      this.util.presentToast("Chọn thời gian");
     } else if (this.dates == "") {
-      this.util.presentToast("Select Dates");
+      this.util.presentToast("Chọn ngày");
     } else if (this.vehicleInfo == null) {
-      this.util.presentToast("Select Your Vehicle");
+      this.util.presentToast("Chọn phương tiện của bạn");
     } else {
       let data = {
         provider_id: this.api.pro_id,
@@ -347,7 +331,7 @@ export class CartPage implements OnInit {
           (success: any) => {
             if (success.success) {
               this.nav.navigateRoot("/home");
-              this.util.presentToast("Booking Successfully Completed");
+              this.util.presentToast("Đặt thành công!");
               this.util.dismissLoading();
 
               this.api.vehicleObj = {};

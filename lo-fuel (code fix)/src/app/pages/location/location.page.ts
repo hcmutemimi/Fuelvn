@@ -16,7 +16,6 @@ export class LocationPage implements OnInit {
     private api: ApiService
   ) {
     this.provider = localStorage.getItem("provider");
-    console.log("this.provider",this.provider);
   }
   current: any = "";
   new: any = "";
@@ -37,7 +36,7 @@ export class LocationPage implements OnInit {
       (success: any) => {
         if (success.success) {
           this.util.dismissLoading();
-          this.util.presentToast("Password Change Successfully");
+          this.util.presentToast("Thay đổi mật khẩu thành công!");
           this.current = "";
           this.new = "";
           this.confirm = "";
@@ -54,6 +53,6 @@ export class LocationPage implements OnInit {
   }
 
   changePassmsg() {
-    this.util.presentToast("password cannot be changed");
+    this.util.presentToast("Thay đổi mật khẩu không thành công!");
   }
 }

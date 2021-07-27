@@ -3,36 +3,36 @@
         <ion-buttons slot="end">
             <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
         </ion-buttons>
-        <ion-title>Change Password</ion-title>
+        <ion-title>Thay đổi mật khẩu</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
     <ion-item mode="md" lines="none">
         <ion-icon slot="start" src="../../../assets/image_icon/lc_ic.svg"></ion-icon>
-        <ion-input type="password" [(ngModel)]="current" placeholder="Current Pass"></ion-input>
+        <ion-input type="password" [(ngModel)]="current" placeholder="Mật khẩu hiện tại"></ion-input>
     </ion-item>
     <span class="err" *ngIf="err">{{err?.old_password}}</span>
     <ion-item mode="md" lines="none">
         <ion-icon slot="start" src="../../../assets/image_icon/lc_ic.svg"></ion-icon>
-        <ion-input [(ngModel)]="new" type="password" placeholder="New Password"></ion-input>
+        <ion-input [(ngModel)]="new" type="password" placeholder="Mật khẩu mới"></ion-input>
     </ion-item>
     <span class="err" *ngIf="err">{{err?.password}}</span>
     <ion-item mode="md" lines="none">
         <ion-icon slot="start" src="../../../assets/image_icon/lc_ic.svg"></ion-icon>
-        <ion-input [(ngModel)]="confirm" type="password" placeholder="Confirm Password"></ion-input>
+        <ion-input [(ngModel)]="confirm" type="password" placeholder="Xác nhận mật khẩu"></ion-input>
     </ion-item>
     <span class="err" *ngIf="err">{{err?.password_confirmation}}</span>
 </ion-content>
 
 <ion-footer class="ion-no-border" (click)="changePass()" *ngIf="provider == 'LOCAL'">
     <ion-button expand="full" class="main_btn ion-text-capitalize">
-        Save
+        Cập nhật
     </ion-button>
 </ion-footer>
 
 <ion-footer class="ion-no-border" (click)="changePassmsg()" *ngIf="provider != 'LOCAL'">
     <ion-button expand="full" class="main_btn ion-text-capitalize">
-        Save
+        Cập nhật
     </ion-button>
 </ion-footer>

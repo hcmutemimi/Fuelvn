@@ -70,14 +70,11 @@ export class HomePage implements OnInit {
       this.diagnostic
       .isLocationEnabled()
       .then((isAvailable) => {
-        // console.log("Is available? " + isAvailable);
-        // alert("Is available? " + isAvailable); 
         if (isAvailable==false) {
           this.requestToSwitchOnGPS();
         }
       })
       .catch((e) => {
-        console.log(e);
         alert(JSON.stringify(e));
       });
     }, 5000);
@@ -97,7 +94,6 @@ export class HomePage implements OnInit {
   requestToSwitchOnGPS() {
     this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(
       (res) => {
-        console.log('ask gps opermission', res);
         this.getLocationCoordinates()
       },
       error => alert(JSON.stringify(error))
@@ -327,7 +323,6 @@ export class HomePage implements OnInit {
   requestGPSPermission() {
     this.locationAccuracy.canRequest().then((canRequest: boolean) => {
       if (canRequest) {
-        console.log("4");
       } else {
         //Show 'GPS Permission Request' dialogue
         this.androidPermissions

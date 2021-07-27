@@ -13,10 +13,8 @@ export class PolicyPage implements OnInit {
   ngOnInit() {
     this.api.getData('privacy').subscribe((successs:any) => {
       if(successs.successs){
-        console.log(successs.data);        
       }
     }, err => {
-      console.log(err);      
     })
   }
 
