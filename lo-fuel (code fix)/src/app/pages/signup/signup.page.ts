@@ -47,7 +47,6 @@ export class SignupPage implements OnInit {
       },
       (err: any) => {
         this.err = err.error.errors;
-        alert( 'error')
         this.util.dismissLoading();
       }
     );

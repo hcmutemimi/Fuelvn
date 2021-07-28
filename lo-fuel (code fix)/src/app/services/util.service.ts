@@ -24,6 +24,7 @@ export class UtilService {
     const toast = await this.toastController.create({
       message: msg,
       duration: 2000,
+      cssClass: 'toasrt',
       mode: "ios",
     });
     toast.present();
@@ -32,7 +33,8 @@ export class UtilService {
     this.isLoading = true;
     return await this.loadingController
       .create({
-        message: "Please Wait..",
+        message: "Vui lòng chờ..",
+        cssClass: 'loading',
         mode: "ios",
       })
       .then((a) => {

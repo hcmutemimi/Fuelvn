@@ -95,6 +95,7 @@ export class AddVehiclePage implements OnInit {
   async selectImage() {
     const actionSheet = await this.actionSheetController.create({
       header: "Chọn ảnh từ",
+      cssClass: 'action-sheet',
       buttons: [
         {
           text: "Thư viện",

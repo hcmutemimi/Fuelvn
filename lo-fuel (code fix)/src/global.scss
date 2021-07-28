@@ -28,10 +28,88 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.action-sheet, .image-picker {
+    --background:  var(--white);
+    --button-background: var(--white);
+    --button-color: var(--my_theme);
+}
+
+.action-sheet, .image-picker  .action-sheet-group {
+    --background: #e5e5e5;
+  
+  }
+.action-sheet-button.sc-ion-action-sheet-ios {
+    padding: 0;
+  
+}
+  .action-sheet-cancel .sc-ion-action-sheet-ios {
+      background-color: var(--white) ;
+  }
+.toasrt {
+    --background: rgb(226, 225, 225) !important;
+    --color: var(--black);
+
+
+}
+.loading {
+  // --background: #424242 !important;
+    //--color: var(--black) !important;
+   --snippner-color: var(--my_theme) !important;
+}
+
+ion-toggle {
+    --background-checked: var(--toggle);
+    --handle-background-checked: var(--my_theme);
+    --background: var(--gray);
+  }
+ion-content {
+    --background: var(--white) !important;
+}
+ion-list {
+    background: var(--white) !important;
+  }
+ion-item {
+    --background: var(--white) !important;
+}
+
 ion-button {
     --ripple-color: transparent;
     --box-shadow: none;
 }
+ion-alert.select-alert {
+    --background: var(--white) !important;
+
+    .alert-title {
+      color: #000 !important;
+    }
+
+    .alert-radio-label.sc-ion-alert-md {
+      flex: 1;
+      color: var(--black) !important;
+      font-size: 14px;
+    }
+
+    .alert-button.sc-ion-alert-md {
+      color: turquoise !important;
+    }
+
+    .alert-radio-group.sc-ion-alert-md,
+    .alert-checkbox-group.sc-ion-alert-md {
+      border-top: 1px solid #d9d9d9 !important;
+      border-bottom: 1px solid #d9d9d9 !important;
+    }
+
+    [aria-checked=true].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md {
+      border-color: var(--my_theme);
+    }
+
+    .alert-radio-inner.sc-ion-alert-md {
+      background-color: var(--my_theme);
+    }
+}
+// ----------- -------------
+
 
 .transparent_btn {
     --background: transparent;
@@ -66,7 +144,9 @@ ion-button {
 }
 
 ion-header {
+
     ion-toolbar {
+        --background: var(--white) !important;
         border-radius: 0px 0px 20px 20px;
         box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.16);
         ion-title {
