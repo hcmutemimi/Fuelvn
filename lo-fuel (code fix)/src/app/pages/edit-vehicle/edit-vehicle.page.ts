@@ -36,7 +36,6 @@ export class EditVehiclePage implements OnInit {
     this.selected_vehicle = JSON.parse(
       localStorage.getItem("selected_vehicle")
     );
-    console.log(this.selected_vehicle);
     
     this.model_id = this.selected_vehicle.id;
     this.models = this.selected_vehicle.modelYear;
@@ -44,7 +43,6 @@ export class EditVehiclePage implements OnInit {
     this.reg_number = this.selected_vehicle.reg_number;
     this.note = this.selected_vehicle.note;
     // this.imageUri = this.selected_vehicle.imageUri;
-    console.log("this.selected_vehicle", this.selected_vehicle);
   }
   // dataOfFirst: any;
   // modelFirst: any;
@@ -54,7 +52,6 @@ export class EditVehiclePage implements OnInit {
       (data: any) => {
         if (data.success) {
           this.data = data.data;
-          console.log(this.data);
           this.util.dismissLoading();
         }
       },
@@ -67,8 +64,6 @@ export class EditVehiclePage implements OnInit {
   }
   changeModel(ev) {
     this.model_id2 = ev.detail.value;
-    console.log(this.model_id2);
-
     this.api.getData("vehicleModel/" + this.model_id2).subscribe(
       (data: any) => {
         if (data.success) {
@@ -112,22 +107,22 @@ export class EditVehiclePage implements OnInit {
   }
   async selectImage() {
     const actionSheet = await this.actionSheetController.create({
-      header: "Select Image source",
+      header: "Chọn ảnh từ",
       buttons: [
         {
-          text: "Load from Library",
+          text: "Thư viện",
           handler: () => {
             this.pickImage(this.camera.PictureSourceType.PHOTOLIBRARY);
           },
         },
         {
-          text: "Use Camera",
+          text: "Máy ảnh",
           handler: () => {
             this.pickImage(this.camera.PictureSourceType.CAMERA);
           },
         },
         {
-          text: "Cancel",
+          text: "Hủy",
           role: "cancel",
         },
       ],
@@ -150,14 +145,12 @@ export class EditVehiclePage implements OnInit {
     }
     this.api.postDataWithToken("vehicle/" + vehicle_id + "/update",data).subscribe(
       (success: any) => {
-        // console.log(success);
         if (success.success) {
           this.util.presentToast(success.msg);
           this.nav.navigateForward("manage-vehicle");
         }
       },
       (err) => {
-        console.log(err);
       }
     );
   }

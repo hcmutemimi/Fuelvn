@@ -32,13 +32,10 @@ export class ManageVehiclePage implements OnInit {
     this.api.profileUpdate.subscribe((d) => {
       this.util.presentLoading();
       this.api.getDataWithToken('vehicle').subscribe((success:any) => {
-        console.log(success.data);
         this.vehicle = success.data;
-        console.log(this.vehicle);
         
         this.util.dismissLoading();
       }, err => {
-        console.log(err);      
         this.util.dismissLoading();
       })
     })
@@ -50,7 +47,6 @@ export class ManageVehiclePage implements OnInit {
     this.nav.navigateForward("/add-vehicle");
   }
   async presentPopover(ev: any,item) {
-    // console.log(item);
     localStorage.setItem("selected_vehicle",JSON.stringify(item));
     const popover = await this.popoverController.create({
       component: PopoverPage,

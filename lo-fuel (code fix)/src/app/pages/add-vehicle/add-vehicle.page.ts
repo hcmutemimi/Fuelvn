@@ -39,8 +39,6 @@ export class AddVehiclePage implements OnInit {
       (data: any) => {
         if (data.success) {
           this.data = data.data;
-          console.log(this.data);
-          
           this.util.dismissLoading();
         }
       },
@@ -96,22 +94,22 @@ export class AddVehiclePage implements OnInit {
   } 
   async selectImage() {
     const actionSheet = await this.actionSheetController.create({
-      header: "Select Image source",
+      header: "Chọn ảnh từ",
       buttons: [
         {
-          text: "Load from Library",
+          text: "Thư viện",
           handler: () => {
             this.pickImage(this.camera.PictureSourceType.PHOTOLIBRARY);
           },
         },
         {
-          text: "Use Camera",
+          text: "Máy ảnh",
           handler: () => {
             this.pickImage(this.camera.PictureSourceType.CAMERA);
           },
         },
         {
-          text: "Cancel",
+          text: "Hủy",
           role: "cancel",
         },
       ],
@@ -121,7 +119,7 @@ export class AddVehiclePage implements OnInit {
 
   manageVechicle() {
     if (this.imageUri == null || this.imageUri == "") {
-      this.util.presentToast("please add image");
+      this.util.presentToast("Hãy thêm ảnh");
     } else {
       let data = {
         model_id: this.model_id,
@@ -134,12 +132,11 @@ export class AddVehiclePage implements OnInit {
       this.api.postDataWithToken("vehicle", data).subscribe(
         (success: any) => {
           if (success.success) {
-            this.util.presentToast("Vehicle Added SuccessFully");
+            this.util.presentToast("Phương tiện được thêm thành công");
             this.nav.navigateForward("manage-vehicle");
           }
         },
         (err) => {
-          console.log(err);
         }
       );
     }

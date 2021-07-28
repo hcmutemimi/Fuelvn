@@ -240,8 +240,6 @@ export class PaymentMethodPage implements OnInit {
         );
       },
       onCancel: (data, actions) => {
-        console.log("OnCancel", data, actions);
-        /* this.util.presentToast(tdata.cancel) */
       },
       onError: (err) => {},
       onClick: (data, actions) => {},

@@ -38,7 +38,6 @@ export class AccountPage implements OnInit {
           }
         },
         (err) => {
-          console.log(err);
           this.util.dismissLoading();
         }
       );
@@ -57,7 +56,6 @@ export class AccountPage implements OnInit {
           }
         },
         (err) => {
-          console.log(err);
           this.util.dismissLoading();
         }
       );
@@ -134,26 +132,26 @@ export class AccountPage implements OnInit {
 
   async selectImage() {
     const actionSheet = await this.sheetCtrl.create({
-      header: "Albums",
+      header: "Thư mục",
       mode: "ios",
       cssClass: "image-picker",
       buttons: [
         {
-          text: "Gallery",
+          text: "Thư viện",
           icon: "images-sharp",
           handler: () => {
             this.getGallery();
           },
         },
         {
-          text: "Camera",
+          text: "Máy ảnh",
           icon: "camera-sharp",
           handler: () => {
             this.getCamera();
           },
         },
         {
-          text: "Cancel",
+          text: "Hủy",
           icon: "close",
           role: "cancel",
           handler: () => {},
@@ -180,10 +178,9 @@ export class AccountPage implements OnInit {
         this.util.presentLoading();
         this.api.postDataWithToken("profile/picture/update", myImg).subscribe(
           async (data: any) => {
-            console.log(data);
             
             await this.util.dismissLoading();
-            this.util.presentToast("Profile Changed!");
+            this.util.presentToast("Cập nhật thành công!");
             this.util.presentToast(data.msg);
             this.api.profileUpdate.next(true);
           },
@@ -215,7 +212,7 @@ export class AccountPage implements OnInit {
         this.api.postDataWithToken("profile/picture/update", myImg).subscribe(
           async (data: any) => {
             await this.util.dismissLoading();
-            this.util.presentToast("Profile Changed!");
+            this.util.presentToast("Cập nhật thành công");
             this.util.presentToast(data.msg);
             this.api.profileUpdate.next(true);
           },
@@ -235,12 +232,11 @@ export class AccountPage implements OnInit {
     this.api.postDataWithToken("profile/update", data).subscribe(
       (success: any) => {
         if (success.success) {
-          this.util.presentToast("Profile Updated");
+          this.util.presentToast("Cập nhật thành công");
           this.api.profileUpdate.next(true);
         }
       },
       (err) => {
-        console.log(err);
       }
     );
   }

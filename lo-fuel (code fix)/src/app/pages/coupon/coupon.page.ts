@@ -10,18 +10,18 @@ export class CouponPage implements OnInit {
   offer = [
     {
       detail:
-        "Nicolas Vargas Petrol, Diesel and Gas services is gives 25% Discount on your first delivery order.",
-      expire: "31,Dec 2019",
+        "Dịch vụ Nicolas Vargas Petrol, Diesel và Gas sẽ giảm 25% cho lần đặt hàng đầu tiên",
+      expire: "31 tháng 12 2019",
     },
     {
       detail:
-        "Harry Mendez Petrol, Diesel or Gas services is gives 50% Discount on your first delivery order.",
-      expire: "31,Jan 2020",
+        "Dịch vụ Harry Mendez Petrol, Diesel và Gas sẽ giảm 50% cho lần đặt hàng đầu tiên.",
+      expire: "31 tháng 6 2020",
     },
     {
       detail:
-        "Marilyn Gas services is gives 50% Discount on your first delivery order.",
-      expire: "15,Jan 2020",
+        "Dịch vụ Marilyn Gas sẽ giảm 50% cho lần đặt hàng đầu tiên.",
+      expire: "15 tháng 6 2020",
     },
   ];
   constructor(private nav: NavController) {}

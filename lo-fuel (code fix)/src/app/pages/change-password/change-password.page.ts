@@ -29,7 +29,7 @@ export class ChangePasswordPage implements OnInit {
       (data: any) => {
         this.util.dismissLoading();
         if (data.success) {
-          this.util.presentToast("Your Password is Changed!");
+          this.util.presentToast("Thay đổi mật khẩu thành công!");
         }
         this.nav.navigateForward("/signin");
       },

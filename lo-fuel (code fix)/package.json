@@ -56,7 +56,6 @@
         "@types/node": "^12.11.1",
         "codelyzer": "^5.0.0",
         "com.razorpay.cordova": "^1.4.12",
-        "cordova-android": "^9.1.0",
         "cordova-ios": "^6.2.0",
         "cordova-plugin-add-swift-support": "^2.0.2",
         "cordova-plugin-android-permissions": "^1.1.2",
@@ -133,7 +132,6 @@
             }
         },
         "platforms": [
-            "android",
             "ios"
         ]
     }

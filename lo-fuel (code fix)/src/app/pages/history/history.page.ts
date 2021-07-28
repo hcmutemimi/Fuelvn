@@ -17,7 +17,7 @@ export class HistoryPage implements OnInit {
       orno: "#3654",
       add: "Stane Farm, Stane St, London, UK.",
       date: "12,Dec 2019",
-      time: "10:30 am to 01:00 pm",
+      time: "10:30 am đến  01:00 pm",
       price: "$20.00",
       car: "Audi A8",
       carno: "WB 007",
@@ -31,7 +31,7 @@ export class HistoryPage implements OnInit {
       orno: "#6659",
       add: "Stane Farm, Stane St,London, UK.",
       date: "10,Dec 2019",
-      time: "11:00 am to 02:00 pm",
+      time: "11:00 am đến 02:00 pm",
       price: "$20.00",
       car: "Audi A7",
       carno: "WB 007",
@@ -45,7 +45,7 @@ export class HistoryPage implements OnInit {
       orno: "#6659",
       add: "Stane Farm, Stane St,London, UK.",
       date: "10,Dec 2019",
-      time: "11:00 am to 02:00 pm",
+      time: "11:00 am đến 02:00 pm",
       price: "$20.00",
       car: "Audi A7",
       carno: "WB 007",
@@ -75,8 +75,6 @@ export class HistoryPage implements OnInit {
             if (success.success) {
               this.booking = success.data.future;
               this.booking2 = success.data.past;
-              console.log(success);
-
               this.util.dismissLoading();
             }
           },
@@ -103,7 +101,6 @@ export class HistoryPage implements OnInit {
             if (success.success) {
               this.booking = success.data.future;
               this.booking2 = success.data.past;
-              console.log(success.success);
 
               this.util.dismissLoading();
             }

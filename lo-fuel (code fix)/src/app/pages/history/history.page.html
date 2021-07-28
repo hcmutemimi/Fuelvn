@@ -7,13 +7,13 @@
         <ion-buttons slot="end">
             <ion-back-button defaultHref="home" icon="chevron-back-outline" text="" mode="md"></ion-back-button>
         </ion-buttons>
-        <ion-title>history</ion-title>
+        <ion-title>Lịch sử</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding-horizontal">
     <div class="currant">
-        <p class="main_lbl">Current Order</p>
+        <p class="main_lbl">Đơn hàng hiện tại</p>
         <div class="no-data" *ngIf="booking?.length ==0">
             <img src="../../../assets/nodata.png" alt="" height="140px" width="140px">
         </div>
@@ -27,29 +27,29 @@
                         <p class="od_no">Order No. #{{item?.order_id}}</p>
                         <p class="od_no add_lbl">{{item?.address}}</p>
                         <div class="pen_div" *ngIf="item?.status == 0">
-                            <p class="pen_lbl">Newer</p>
+                            <p class="pen_lbl">Mới hơn</p>
                         </div>
                         <div class="pen_div cm_div" *ngIf="item?.status == 1">
-                            <p class="pen_lbl">Accepted</p>
+                            <p class="pen_lbl">Đã xác nhận</p>
                         </div>
                         <div class="pen_div cm_div" *ngIf="item?.status == 2">
-                            <p class="pen_lbl">Another Way</p>
+                            <p class="pen_lbl">Khác</p>
                         </div>
                         <div class="pen_div cm_div" *ngIf="item?.status == 3">
-                            <p class="pen_lbl">Done</p>
+                            <p class="pen_lbl">Hoàn thành</p>
                         </div>
                         <div class="pen_div" *ngIf="item?.status == 4">
-                            <p class="pen_lbl">Cancle</p>
+                            <p class="pen_lbl">Đã hủy</p>
                         </div>
                         <div class="pen_div" *ngIf="item?.status == 6">
-                            <p class="pen_lbl">Rejected</p>
+                            <p class="pen_lbl">Từ chối</p>
                         </div>
                     </div>
                 </div>
                 <div class="detail_div">
-                    <p class="od_no title_lbl">Date & Time <span class="ion-float-right">Price</span></p>
+                    <p class="od_no title_lbl">Ngày và giờ <span class="ion-float-right">Giá</span></p>
                     <p class="data_lbl">{{item?.time}} <span class="ion-float-right">{{item?.currency}} {{item?.price}}</span></p>
-                    <p class="od_no title_lbl margin-top">Vehicle Name <span class="ion-float-right">Vehicle Number</span></p>
+                    <p class="od_no title_lbl margin-top">Tên phương tiện <span class="ion-float-right">Số hiệu phương tiện</span></p>
                     <p class="data_lbl">{{item?.model?.model?.name}} <span class="ion-float-right">{{item?.model?.reg_number}}</span></p>
                 </div>
             </div>
@@ -57,7 +57,7 @@
     </div>
 
     <div class="past">
-        <p class="main_lbl">Past Order</p>
+        <p class="main_lbl">Đơn hàng đã đặt</p>
         <div class="no-data" *ngIf="booking2?.length == 0">
             <img src="../../../assets/nodata.png" alt="" height="140px" width="140px">
         </div>
@@ -71,29 +71,29 @@
                         <p class="od_no">Order No. #{{item?.order_id}}</p>
                         <p class="od_no add_lbl">{{item?.address}}</p>
                         <div class="pen_div" *ngIf="item?.status == 0">
-                            <p class="pen_lbl">Newer</p>
+                            <p class="pen_lbl">Mới hơn</p>
                         </div>
                         <div class="pen_div cm_div" *ngIf="item?.status == 1">
-                            <p class="pen_lbl">Accepted</p>
+                            <p class="pen_lbl">Đã xác nhận</p>
                         </div>
                         <div class="pen_div cm_div" *ngIf="item?.status == 2">
-                            <p class="pen_lbl">Another Way</p>
+                            <p class="pen_lbl">Khác</p>
                         </div>
                         <div class="pen_div cm_div" *ngIf="item?.status == 3">
-                            <p class="pen_lbl">Done</p>
+                            <p class="pen_lbl">Hoàn thành</p>
                         </div>
                         <div class="pen_div" *ngIf="item?.status == 4">
-                            <p class="pen_lbl">Cancle</p>
+                            <p class="pen_lbl">Hủy</p>
                         </div>
                         <div class="pen_div" *ngIf="item?.status == 6">
-                            <p class="pen_lbl">Rejected</p>
+                            <p class="pen_lbl">Từ chối</p>
                         </div>
                     </div>
                 </div>
                 <div class="detail_div">
-                    <p class="od_no title_lbl">Date & Time <span class="ion-float-right">Price</span></p>
+                    <p class="od_no title_lbl">Ngày và giờ  <span class="ion-float-right">Giá</span></p>
                     <p class="data_lbl">{{item?.time}} <span class="ion-float-right">{{item?.currency}} {{item?.price}}</span></p>
-                    <p class="od_no title_lbl margin-top">Vehicle Name <span class="ion-float-right">Vehicle Number</span></p>
+                    <p class="od_no title_lbl margin-top">Tên phương tiện <span class="ion-float-right">Số hiệu phương tiện</span></p>
                     <p class="data_lbl">{{item?.model?.model?.name}} <span class="ion-float-right">{{item?.model?.reg_number}}</span></p>
                 </div>
             </div>

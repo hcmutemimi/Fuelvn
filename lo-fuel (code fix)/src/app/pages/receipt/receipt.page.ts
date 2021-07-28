@@ -52,7 +52,7 @@ export class ReceiptPage implements OnInit {
       (success: any) => {
         if (success.success) {
           this.nav.navigateForward("/history");
-          this.util.presentToast("Thanks for review");
+          this.util.presentToast("Cảm ơn sự đánh giá của bạn");
           this.util.dismissLoading();
         }
       },
@@ -85,7 +85,7 @@ export class ReceiptPage implements OnInit {
       .subscribe(
         (success: any) => {
           if (success.success) {
-            this.util.presentToast("Canceled");
+            this.util.presentToast("Đã hủy");
             this.ngOnInit();
             this.util.dismissLoading();
           }

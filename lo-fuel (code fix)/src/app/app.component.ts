@@ -30,22 +30,22 @@ export class AppComponent implements OnInit {
   @ViewChildren(IonRouterOutlet) routerOutlets: QueryList<IonRouterOutlet>;
   public appPages = [
     {
-      title: "Home",
+      title: "Trang chủ",
       url: "/home",
       icon: "../assets/image_icon/home_ic.svg",
     },
     {
-      title: "History",
+      title: "Lịch sử",
       url: "/history",
       icon: "../assets/image_icon/pump.svg",
     },
     {
-      title: "Manage Vehicles",
+      title: "Quản lý phương tiện",
       url: "/manage-vehicle",
       icon: "../assets/image_icon/vehicle_ic.svg",
     },
     {
-      title: "Setting",
+      title: "Cài đặt",
       url: "/setting",
       icon: "../assets/image_icon/settings.svg",
     },
@@ -125,9 +125,7 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       this.api.getData("noti/setting").subscribe(
         (res: any) => {
-          // console.log("key", res);
           if (res.success) {
-            // console.log("res", res);
             if (res.data.APP_ID && res.data.PROJECT_NUMBER) {
               this.oneSignal.startInit(
                 res.data.APP_ID,
@@ -197,7 +195,7 @@ export class AppComponent implements OnInit {
   }
   async showToast() {
     const toast = await this.toastController.create({
-      message: "press back again to exit App.",
+      message: "Nhấn lần nữa để thoát app.",
       duration: 2000,
     });
     toast.present();
