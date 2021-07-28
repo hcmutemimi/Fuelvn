@@ -1,0 +1,59 @@
+ion-header {
+  .profile_div {
+    text-align: center;
+    padding-top: 20px;
+    .img_div {
+      height: 131px;
+      width: 131px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      .user_img {
+        height: 106px;
+        width: 106px;
+        border-radius: 50%;
+      }
+      .back_img {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    .name {
+      font-size: 18px;
+      color: var(--blue);
+      font-family: "rubik_md";
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .email {
+      font-size: 15px;
+      color: var(--gray);
+      font-family: "rubik_r";
+      margin: 0;
+    }
+  }
+}
+ion-content {
+  ion-item {
+    --inner-padding-end: 0;
+    --padding-start: 0;
+    margin-bottom: 15px;
+    ion-icon {
+      color: var(--blue);
+      height: 17px;
+      width: 17px;
+      margin-right: 20px;
+    }
+    ion-input {
+      font-size: 18px;
+      color: var(--blue);
+      font-family: "rubik_md";
+      border-bottom: dotted;
+      border-bottom-width: 1px;
+      border-bottom-color: var(--silver);
+    }
+  }
+}
