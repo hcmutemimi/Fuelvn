@@ -16,10 +16,10 @@
         </agm-marker>
     </agm-map>
     <div class="location_div">
-        <h3 class="loc_lbl">Chọn vị trí</h3>
+        <h3 class="loc_lbl">Lấy vị trí</h3>
         <div class="input_div">
             <ion-icon src="../../../assets/image_icon/location.svg"></ion-icon>
-            <input autofocus="true" ngx-google-places-autocomplete value="{{address}}" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
+            <input autofocus="true" ngx-google-places-autocomplete value="{{address}}" #placesRef="Nhập địa điểm" (onAddressChange)="handleAddressChange($event)">
         </div>
     </div>
 </ion-content>

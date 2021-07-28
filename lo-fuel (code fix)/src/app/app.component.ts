@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
   ) {
     this.initializeApp();
     this.backButtonEvent();
-    this.nav.navigateRoot("/signin");
+    this.nav.navigateRoot("/home");
     this.api.isNewLogin().subscribe((d) => {
       setTimeout(() => {
         this.token = localStorage.getItem("token")
