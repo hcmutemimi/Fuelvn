@@ -16,7 +16,7 @@
         <ion-label class="st_lbl" mode="ios" position="stacked">
             Hãng
         </ion-label>
-        <ion-select placeholder="Select Brand" (ionChange)="changeModel($event)">
+        <ion-select placeholder="Chọn hãng" (ionChange)="changeModel($event)">
             <ion-select-option *ngFor="let item of data" value="{{ item.id }}">{{ item.name }}</ion-select-option>
         </ion-select>
     </ion-item>
@@ -25,43 +25,43 @@
         <ion-label class="st_lbl" mode="ios" position="stacked">
             Mẫu
         </ion-label>
-        <ion-select placeholder="Select Model" [(ngModel)]="model_id" [disabled]="model_id2 == ''">
+        <ion-select placeholder="Chọn mẫu" [(ngModel)]="model_id" [disabled]="model_id2 == ''">
             <ion-select-option *ngFor="let items of model" [value]="items.id">{{ items.name }}</ion-select-option>
         </ion-select>
     </ion-item>
 
     <ion-item mode="md" lines="none">
         <ion-label class="st_lbl" mode="ios" position="stacked">
-            Mẫu
+            Năm sản xuất
         </ion-label>
-        <ion-input placeholder="Model Year" [(ngModel)]="models">
+        <ion-input placeholder="Năm sản xuất" [(ngModel)]="models">
         </ion-input>
     </ion-item>
     <ion-item mode="md" lines="none">
         <ion-label class="st_lbl" mode="ios" position="stacked">
             Màu
         </ion-label>
-        <ion-input placeholder="Vehicle Color" [(ngModel)]="color">
+        <ion-input placeholder="Màu" [(ngModel)]="color">
         </ion-input>
     </ion-item>
     <ion-item mode="md" lines="none">
         <ion-label class="st_lbl" mode="ios" position="stacked">
-            Biển số
+           Số hiệu
         </ion-label>
-        <ion-input placeholder="Vehicle Number" [(ngModel)]="reg_number">
+        <ion-input placeholder="Số hiệu" [(ngModel)]="reg_number">
         </ion-input>
     </ion-item>
     <ion-item mode="md" lines="none">
         <ion-label class="st_lbl" mode="ios" position="stacked">
             Ghi chú
         </ion-label>
-        <ion-input placeholder="Type any message" [(ngModel)]="note">
+        <ion-input placeholder="Thêm ghi chú" [(ngModel)]="note">
         </ion-input>
     </ion-item>
     <div class="upload_div" (click)="selectImage()">
         <div class="up_div" [hidden]="image != null">
             <h3 class="up_lbl">Thêm ảnh cho phương tiện</h3>
-            <p class="touch_lbl">(bấm vào đây để thêm)</p>
+            <p class="touch_lbl">(bấm để thêm)</p>
         </div>
         <img src="{{image}}" [hidden]="image == null" class="user_img">
     </div>
