@@ -289,7 +289,7 @@ export class HomePage implements OnInit {
       });
     });
     if (item.sub_fuel_type.length == 0) {
-      this.util.presentToast("No Fuel available! ");
+      this.util.presentToast("Không có nhiên liệu nào cả! ");
     } else {
       localStorage.setItem("pro_id", item.id);
       this.util.dismissLoading();
