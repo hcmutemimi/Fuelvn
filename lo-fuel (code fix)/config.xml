@@ -106,8 +106,5 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
-<<<<<<< HEAD
     <allow-navigation href="http://localhost:8100" sessionid="f7b8b75f" />
-=======
->>>>>>> 087adee2a57661a1031672edd9d726abc8236345
 </widget>

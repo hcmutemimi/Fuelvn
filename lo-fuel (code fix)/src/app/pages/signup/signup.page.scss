@@ -3,8 +3,13 @@ ion-content {
     .logo_div {
         padding-top: 16px;
         text-align: center;
+        img {
+            height: 200px;
+            width: 140px;
+        }
         .logo_tittle {
             font-size: 40px;
+            margin-top: 10px;
             color: var(--white);
             font-family: "HornbillPersonalUse_b";
             margin-bottom: 0;
