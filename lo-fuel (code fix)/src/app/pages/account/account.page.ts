@@ -45,7 +45,7 @@ export class AccountPage implements OnInit {
   }
 
   ionViewWillEnter() {
-   // this.util.presentLoading();
+    //this.util.presentLoading();
     this.api.profileUpdate.subscribe((e) => {
       this.api.getDataWithToken("profile").subscribe(
         (success: any) => {

@@ -95,7 +95,7 @@ export class HistoryPage implements OnInit {
       this.util.nav.navigateForward("signin");
     } else {
       this.api.profileUpdate.subscribe((e) => {
-        this.util.presentLoading();
+        //this.util.presentLoading();
         this.api.getDataWithToken("booking").subscribe(
           (success: any) => {
             if (success.success) {

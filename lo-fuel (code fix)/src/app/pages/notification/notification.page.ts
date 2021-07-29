@@ -41,7 +41,7 @@ export class NotificationPage implements OnInit {
       this.api.postDataWithToken("profile/update", data).subscribe(
         (success: any) => {
           if (success.success) {
-            this.util.presentToast("Đã cài đặt");
+            this.util.presentToast("Cài đặt thành công");
             this.api.profileUpdate.next(true);
           }
         },
@@ -54,7 +54,7 @@ export class NotificationPage implements OnInit {
       this.api.postDataWithToken("profile/update", data).subscribe(
         (success: any) => {
           if (success.success) {
-            this.util.presentToast("Đã cài đặt");
+            this.util.presentToast("Cài đặt thành công");
             this.api.profileUpdate.next(true);
           }
         },

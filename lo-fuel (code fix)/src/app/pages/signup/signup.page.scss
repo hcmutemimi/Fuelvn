@@ -1,5 +1,5 @@
 ion-content {
-    --background: url("../../../assets/image/LogIn.png") no-repeat center center / cover;
+    --background: url("../../../assets/image/LogIn.png") no-repeat center center / cover !important;
     .logo_div {
         text-align: center;
         img {
@@ -34,9 +34,10 @@ ion-content {
         font-size: 13px;
     }
     .data_div {
+        background-color: transparent !important;
         .data_item {
             margin-bottom: 4px;
-            --background: transparent;
+            --background: transparent !important;
             --padding-start: 0px;
             --inner-padding-end: 0;
             border-bottom: 1px solid var(--white);
@@ -53,6 +54,11 @@ ion-content {
                 font-size: 16px;
                 font-family: "rubik_r";
                 color: var(--white);
+            }
+            ion-button {
+                ion-icon {
+                    color: var(--my_theme);
+                }
             }
         }
         .sign_up {

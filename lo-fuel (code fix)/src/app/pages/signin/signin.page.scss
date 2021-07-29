@@ -1,5 +1,5 @@
 ion-content {
-    --background: url("../../../assets/image/LogIn.png") no-repeat center center / cover;
+    --background: url("../../../assets/image/LogIn.png") no-repeat center center / cover !important;
     .logo_div {
         text-align: center;
         img {
@@ -34,8 +34,9 @@ ion-content {
         font-size: 13px;
     }
     .data_div {
+        background-color: transparent !important;
         .data_item {
-            --background: transparent;
+            --background: transparent !important;
             --padding-start: 0px;
             --inner-padding-end: 0;
             border-bottom: 1px solid var(--white);
@@ -53,6 +54,11 @@ ion-content {
                 font-family: "rubik_r";
                 color: var(--white);
             }
+            ion-button {
+                ion-icon {
+                    color: var(--my_theme);
+                }
+            }
         }
         ion-row {
             margin-bottom: 20px;
@@ -60,9 +66,10 @@ ion-content {
                 padding: 0px;
                 margin-top: 5px;
                 ion-checkbox {
-                    --background: transparent;
+                    --background: transparent !important;
                     margin-right: 10px;
                     --border-radius: 2px;
+                    --background-checked: var(--my_theme);
                     height: 15px;
                     width: 15px;
                     --border-color: var(--white);
@@ -138,6 +145,7 @@ ion-content {
         span {
             background: var(--white);
             padding: 0 15px;
+            color: var(--black);
         }
     }
     h2.double:before {
