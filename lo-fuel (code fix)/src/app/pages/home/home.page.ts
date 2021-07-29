@@ -337,7 +337,7 @@ export class HomePage implements OnInit {
             (error) => {
               //Show alert if user click on 'No Thanks'
               alert(
-                "requestPermission Error requesting location permissions " +
+                "Lỗi khi yêu cầu cấp quyền lấy vị trí" +
                   error
               );
             }
@@ -356,7 +356,7 @@ export class HomePage implements OnInit {
         },
         (error) =>
           alert(
-            "Error requesting location permissions " + JSON.stringify(error)
+            "Lỗi khi yêu cầu cấp quyền lấy vị trí " + JSON.stringify(error)
           )
       );
   }

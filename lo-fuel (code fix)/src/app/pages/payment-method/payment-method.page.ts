@@ -68,7 +68,7 @@ export class PaymentMethodPage implements OnInit {
         (success: any) => {
           if (success.success) {
             this.nav.navigateRoot("/home");
-            this.utl.presentToast("Booking Successfully Completed");
+            this.utl.presentToast("Đơn đặt hàng thành công!");
             this.utl.dismissLoading();
             this.presentModal();
           }
@@ -88,7 +88,7 @@ export class PaymentMethodPage implements OnInit {
 
   payWithRazor() {
     var options = {
-      description: "Credits towards consultation",
+      description: "Tín dụng đối với tư vấn",
       image: "https://i.imgur.com/3g7nmJC.png",
       currency: this.paymentSetting.currency,
       key: this.paymentSetting.RAZOR_ID,
@@ -99,7 +99,7 @@ export class PaymentMethodPage implements OnInit {
       },
       modal: {
         ondismiss: function () {
-          alert("dismissed");
+          alert("bỏ qua");
         },
       },
     };
@@ -116,7 +116,7 @@ export class PaymentMethodPage implements OnInit {
       this.api.postDataWithToken("mackPayment", ok).subscribe(
         (success: any) => {
           if (success.success) {
-            this.util.presentToast("Payment Done");
+            this.util.presentToast("Thanh toán thành công!");
             this.util.nav.navigateForward("home");
             this.util.dismissLoading();
             this.presentModal();
@@ -124,13 +124,13 @@ export class PaymentMethodPage implements OnInit {
         },
         (err) => {
           this.util.dismissLoading();
-          this.util.presentToast("Something Went Wrong");
+          this.util.presentToast("Đã xảy ra lỗi");
         }
       );
     };
 
     var cancelCallback = function (error) {
-      alert(error.description + " (Error " + error.code + ")");
+      alert(error.description + " (Lỗi " + error.code + ")");
     };
 
     RazorpayCheckout.open(options, successCallback, cancelCallback);
@@ -147,7 +147,7 @@ export class PaymentMethodPage implements OnInit {
       this.card = 0;
       this.razors = 0;
       this.stripes = 0;
-      this.util.presentToast("Payment not possible");
+      this.util.presentToast("Không thể thanh toán");
     }
   }
   async presentModal() {
@@ -200,20 +200,20 @@ export class PaymentMethodPage implements OnInit {
       },
       onApprove: (data, actions) => {
         console.log(
-          "onApprove - transaction was approved, but not authorized",
+          "onApprove - giao dịch đã được chấp thuận, nhưng không được ủy quyền",
           data,
           actions
         );
         actions.order.get().then((details) => {
           console.log(
-            "onApprove - you can get full order details inside onApprove: ",
+            "onApprove - bạn có thể nhận được đầy đủ chi tiết đơn đặt hàng bên trong onApprove: ",
             details
           );
         });
       },
       onClientAuthorization: (data) => {
         console.log(
-          "onClientAuthorization - you should probably inform your server about completed transaction at this point",
+          "onClientAuthorization - bạn có thể nên thông báo cho máy chủ của mình về giao dịch đã hoàn thành tại thời điểm này",
           data
         );
         this.util.presentLoading();
@@ -227,7 +227,7 @@ export class PaymentMethodPage implements OnInit {
         this.api.postDataWithToken("mackPayment", ok).subscribe(
           (success: any) => {
             if (success.success) {
-              this.util.presentToast("Payment Done");
+              this.util.presentToast("Thanh toán thành công");
               this.util.nav.navigateForward("home");
               this.util.dismissLoading();
               this.presentModal();
@@ -235,7 +235,7 @@ export class PaymentMethodPage implements OnInit {
           },
           (err) => {
             this.util.dismissLoading();
-            this.util.presentToast("Something Went Wrong");
+            this.util.presentToast("Đã xảy ra lỗi");
           }
         );
       },
@@ -257,7 +257,7 @@ export class PaymentMethodPage implements OnInit {
       this.paypal = 0;
       this.stripes = 1;
       this.razors = 0;
-      this.util.presentToast("payment not possible");
+      this.util.presentToast("Không thể thanh toán");
     }
   }
 
@@ -272,7 +272,7 @@ export class PaymentMethodPage implements OnInit {
       this.paypal = 0;
       this.stripes = 0;
       this.razors = 1;
-      this.util.presentToast("Payment Not Possible");
+      this.util.presentToast("Không thể thanh toán");
     }
   }
 
@@ -293,18 +293,18 @@ export class PaymentMethodPage implements OnInit {
         this.api.postDataWithToken("mackPayment", ok).subscribe(
           (success: any) => {
             if (success.success) {
-              this.util.presentToast("Payment Done");
+              this.util.presentToast("Thành toán thành công");
               this.util.nav.navigateForward("home");
               this.presentModal();
               this.util.dismissLoading();
             } else {
               this.util.dismissLoading();
-              this.util.presentToast("Something Went Wrong");
+              this.util.presentToast("Đã xảy ra lỗi");
             }
           },
           (err) => {
             this.util.dismissLoading();
-            this.util.presentToast("Something Went Wrong");
+            this.util.presentToast("Đã xảy ra lỗi");
           }
         );
       })

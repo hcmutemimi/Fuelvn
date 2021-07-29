@@ -195,7 +195,7 @@ export class AppComponent implements OnInit {
   }
   async showToast() {
     const toast = await this.toastController.create({
-      message: "Nhấn lần nữa để thoát app.",
+      message: "Nhấn lần nữa để thoát ứng dụng.",
       duration: 2000,
     });
     toast.present();
