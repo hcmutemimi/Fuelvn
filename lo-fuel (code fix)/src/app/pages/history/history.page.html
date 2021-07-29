@@ -24,7 +24,7 @@
                     <img *ngIf="!item?.provider?.imageUri" src="../../../assets/placeholder.png">
                     <div class="data_div">
                         <h3 class="name">{{item?.provider?.name}}</h3>
-                        <p class="od_no">Order No. #{{item?.order_id}}</p>
+                        <p class="od_no">Số hóa đơn. #{{item?.order_id}}</p>
                         <p class="od_no add_lbl">{{item?.address}}</p>
                         <div class="pen_div" *ngIf="item?.status == 0">
                             <p class="pen_lbl">Mới hơn</p>
