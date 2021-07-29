@@ -1,3 +1,10 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            padding: 0;
+        }
+    }
+}
 ion-content {
     .head_div {
         height: 40px;

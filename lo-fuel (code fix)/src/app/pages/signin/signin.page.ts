@@ -88,7 +88,7 @@ export class SigninPage implements OnInit {
       },
       (err: any) => {
         this.err = err.error.errors;
-        this.util.presentToast("Đã xyar ra lỗi");
+        this.util.presentToast("Đã xảy ra lỗi");
         this.util.dismissLoading();
       }
     );
