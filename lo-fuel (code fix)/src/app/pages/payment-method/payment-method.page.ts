@@ -82,7 +82,7 @@ export class PaymentMethodPage implements OnInit {
       this.paypal = 0;
       this.razors = 0;
       this.stripes = 0;
-      this.util.presentToast("Payment not Possible");
+      this.util.presentToast("Không thể thanh toán");
     }
   }
 

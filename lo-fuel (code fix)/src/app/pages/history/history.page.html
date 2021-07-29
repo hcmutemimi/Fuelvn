@@ -15,7 +15,7 @@
     <div class="currant">
         <p class="main_lbl">Đơn hàng hiện tại</p>
         <div class="no-data" *ngIf="booking?.length ==0">
-            <img src="../../../assets/nodata.png" alt="" height="140px" width="140px">
+            <!--<img src="../../../assets/nodata.png" alt="" height="140px" width="140px"> --> 
         </div>
         <div *ngIf="booking?.length > 0">
             <div class="card_div" *ngFor="let item of booking" (click)="Receipt(item?.id,item?.provider_id)">
@@ -59,7 +59,8 @@
     <div class="past">
         <p class="main_lbl">Đơn hàng đã đặt</p>
         <div class="no-data" *ngIf="booking2?.length == 0">
-            <img src="../../../assets/nodata.png" alt="" height="140px" width="140px">
+            <!--  <img src="../../../assets/nodata.png" alt="" height="140px" width="140px">-->
+           
         </div>
         <div *ngIf="booking2?.length > 0">
             <div class="card_div" *ngFor="let item of booking2" (click)="Receipt(item?.id,item?.provider_id)">

@@ -53,9 +53,10 @@
 
 }
 .loading {
-  // --background: #424242 !important;
-    //--color: var(--black) !important;
-   --snippner-color: var(--my_theme) !important;
+   --background: #fff !important;
+    color: var(--black) !important;
+   //--spinner-color: var(--my_theme);
+   
 }
 
 ion-toggle {
