@@ -35,6 +35,7 @@ export class UtilService {
       .create({
         message: "Vui lòng chờ..",
         cssClass: 'loading',
+        
         mode: "ios",
       })
       .then((a) => {

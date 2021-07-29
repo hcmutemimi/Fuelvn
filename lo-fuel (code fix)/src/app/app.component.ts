@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
         this.locationCoords.timestamp = resp.timestamp;
       })
       .catch((error) => {
-        //alert("Error getting location" + error);
+        alert("Xảy ra lỗi khi lấy vị trí" + error);
       });
   }
 

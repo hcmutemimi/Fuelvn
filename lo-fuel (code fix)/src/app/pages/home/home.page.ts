@@ -494,7 +494,7 @@ export class HomePage implements OnInit {
       })
       .catch((error) => {
         this.util.dismissLoading();
-        //alert("Error getting location" + error);
+        alert("Xảy ra lỗi khi lấy vị trí" + error);
       });
   }
 
