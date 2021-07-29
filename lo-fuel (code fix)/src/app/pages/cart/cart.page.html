@@ -53,12 +53,12 @@
         <div class="pickup_div ion-margin-top">
             <div class="date_div">
                 <p class="date_lbl">Ngày</p>
-                <ion-datetime placeholder="Select Your Date" [min]="date" max="2030" id="dynamicDisabled" (ionChange)="mydate($event)" displayFormat="YYYY-MM-DD" [(ngModel)]="date" #dateCtrl="ngModel">
+                <ion-datetime placeholder="Chọn ngày" [min]="date" max="2030" id="dynamicDisabled" (ionChange)="mydate($event)" displayFormat="YYYY-MM-DD" [(ngModel)]="date" #dateCtrl="ngModel">
                 </ion-datetime>
             </div>
             <div class="date_div">
                 <p class="date_lbl">Thời gian</p>
-                <ion-datetime placeholder="Select Your Time" id="dynamicDisabled" (ionChange)="mytime($event)" displayFormat="HH:mm:00" [(ngModel)]="time"></ion-datetime>
+                <ion-datetime placeholder="Chọn thời gian" id="dynamicDisabled" (ionChange)="mytime($event)" displayFormat="HH:mm:00" [(ngModel)]="time"></ion-datetime>
             </div>
         </div>
         <div class="map_div">
@@ -74,7 +74,7 @@
                     </ion-button>
                 </h3>
                 <p class="data_lbl" *ngIf="vehicleInfo">{{vehicleInfo?.modelName}} {{vehicleInfo?.model}}</p>
-                <p class="data_lbl" *ngIf="!vehicleInfo" (click)="changeVehicle()">Chọn phương tiện</p>
+                <p class="data_lbl" *ngIf="!vehicleInfo" (click)="changeVehicle()">Tên phương tiện</p>
             </ion-label>
         </ion-item>
         <ion-item class="vehicle_item" mode="md" lines="none">

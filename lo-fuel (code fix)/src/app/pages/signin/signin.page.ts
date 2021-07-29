@@ -22,7 +22,9 @@ export class SigninPage implements OnInit {
     this.menu.enable(false);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
   forgotPassword() {
     this.nav.navigateForward("/forgot");
     this.util.modal.dismiss();

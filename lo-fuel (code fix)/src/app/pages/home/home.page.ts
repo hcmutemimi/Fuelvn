@@ -89,6 +89,7 @@ export class HomePage implements OnInit {
       this.getLocationCoordinates();
       this.util.dismissLoading();
     }, 3000);
+
   }
 
   requestToSwitchOnGPS() {
